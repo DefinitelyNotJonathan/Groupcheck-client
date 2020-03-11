@@ -4,6 +4,21 @@ import ApiContext from '../ApiContext'
 class AddItem extends React.Component {
     static contextType=ApiContext;
 
+    handleSubmit(e){
+        e.preventDefault();
+        const data = new FormData(e.target);
+
+        fetch('http://localhost:8000/api/users/:user_id/lists/:list_id', {
+            method: 'POST',
+            body: data,
+        })
+        .then(res => res.json())
+        .then((data) => {
+            console.log(data);
+        })
+        //need to navigate to home page from here
+    }
+
     render() {
 
         const lists = this.context.lists;

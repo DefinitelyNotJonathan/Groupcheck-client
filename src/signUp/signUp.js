@@ -1,7 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export default class SignUp extends React.Component {
+    
+    handleSubmit(e){
+        e.preventDefault();
+        const data = new FormData(e.target);
+
+        fetch('http://localhost:8000/api/users/signup', {
+            method: 'POST',
+            body: data,
+        })
+        .then(res => res.json())
+        .then((data) => {
+            console.log(data);
+        })
+        // .then(() => {
+        //     history
+        // })
+        //need to navigate to home page from here
+    }
+
+
     render() {
         return(
             <div>
@@ -13,11 +32,10 @@ export default class SignUp extends React.Component {
                   <input type="text" id="Last name"></input>
                   <label htmlFor="Email">Email*</label>
                   <input type="text" id="Email"></input>  
-                  <Link to="/home">Sign Up!</Link>
+                  <button id= "signup" name="signup">Sign Up!</button>
                 </form>
             </div>
         )
     }
 }
 
-//returns users to login page, or does it take them to their new homepage?
