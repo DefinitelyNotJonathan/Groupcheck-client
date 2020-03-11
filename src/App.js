@@ -15,7 +15,8 @@ import SignUp from './signUp/signUp';
 class App extends Component {
   state = {
     items: [],
-    lists: []
+    lists: [],
+    user: {}
   }
     componentDidMount() {
 
