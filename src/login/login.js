@@ -35,14 +35,16 @@ export default class Login extends React.Component {
         })
         .then(res => res.json())
         .then((data) => {
-            console.log(data);
+            console.log('then(data)' + data);
             if(data && data.hasOwnProperty("user_id")) {
-                
+                console.log('user id' + data.user_id)
+                this.setState({user: data.user_id})
+                console.log(this.state.user)
             }
         })
-        // .then(() => {
-        //     this.props.history.push('/home')
-        // })
+        .then(() => {
+            this.props.history.push('/home')
+        })
     }
     render() {
         return(
