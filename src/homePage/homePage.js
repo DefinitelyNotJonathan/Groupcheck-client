@@ -1,8 +1,11 @@
 import React from 'react';
 import Dashboard from '../dashboard/dashboard';
 import ListHomePage from '../List/listHomePage';
+import ApiContext from '../ApiContext'
 
 export default class HomePage extends React.Component {
+
+  static contextType = ApiContext;
 
     /*objectives:
 
@@ -19,15 +22,22 @@ export default class HomePage extends React.Component {
     once i have the user object i'll want to set it to the app store
     */
 
+    componentDidMount(){
+      console.log('homepage componentDidMount()');
+      console.log('the app user is: ' + this.context.user.firstname);
+      // user is held in: this.context.user
+
+    }
+
     render() {
         console.log('homepage');
         return (
             <div className="Homepage-Container">
-                <Dashboard></Dashboard>
+                <Dashboard name={this.context.user.firstname}></Dashboard>
                 <ListHomePage
                 ></ListHomePage>
             </div>
-    
+
         )
     }
 }

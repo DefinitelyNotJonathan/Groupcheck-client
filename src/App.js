@@ -22,6 +22,8 @@ class App extends Component {
 
       this.setState(STORE);
       console.log('App Ready');
+      // output app state to view starting values
+      console.log(this.state);
     }
 
     renderMainRoutes() {
@@ -72,21 +74,26 @@ class App extends Component {
     }
     render() {
         const value = {
-            items: this.state.items,
-            lists: this.state.lists,
-            deleteItem: this.handleDeleteItem,
-            deleteList: this.handleDeleteList,
-            addItem: (item) => {
-                console.log(item);
-                item.id = Math.floor(Math.random()*1E16).toString();
-                this.state.items.push(item);
-                this.setState(this.state);
-            },
-            addList: (list) => {
-              list.id = Math.floor(Math.random()*1E16).toString();
-              this.state.lists.push(list);
+          items: this.state.items,
+          lists: this.state.lists,
+          deleteItem: this.handleDeleteItem,
+          deleteList: this.handleDeleteList,
+          addItem: (item) => {
+              console.log(item);
+              item.id = Math.floor(Math.random()*1E16).toString();
+              this.state.items.push(item);
               this.setState(this.state);
-          }
+          },
+          addList: (list) => {
+            list.id = Math.floor(Math.random()*1E16).toString();
+            this.state.lists.push(list);
+            this.setState(this.state);
+          },
+          setUser: (user)=> {
+            this.setState({ user: user });
+            console.log('did update user state')
+          },
+          user: this.state.user
         };
 
         // console.log(this.state.items)
@@ -102,7 +109,7 @@ class App extends Component {
                         <main className="App__main">{this.renderMainRoutes()}
                         </main>
                     </ErrorBoundary>
-                    
+
                 </div>
             </ApiContext.Provider>
         );
