@@ -36,6 +36,7 @@ const STORE = {
             "priority":3,
             "listId": "ccccccc",
         }
-    ]
+    ],
+    user: {}
 }
 export default STORE

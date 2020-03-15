@@ -1,7 +1,10 @@
 import React from 'react';
 import Route from 'react-router-dom';
+import ApiContext from '../ApiContext'
 
 export default class Login extends React.Component {
+
+  static contextType = ApiContext;
 
     constructor(props) {
         super(props);
@@ -35,11 +38,16 @@ export default class Login extends React.Component {
         })
         .then(res => res.json())
         .then((data) => {
-            console.log('then(data)' + data);
+            // console.log('then(data)' + data);
             if(data && data.hasOwnProperty("user_id")) {
                 console.log('user id' + data.user_id)
-                this.setState({user: data.user_id})
-                console.log(this.state.user)
+                this.context.setUser({ user_id: data.user_id })
+                console.log('did call this.context.setUser()');
+                console.log('check user state:');
+                console.log(this.context.user);
+                //
+                // this.setState({user: data.user_id})
+                // console.log(this.state.user)
             }
         })
         .then(() => {
