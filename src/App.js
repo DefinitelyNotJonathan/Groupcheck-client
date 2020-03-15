@@ -76,6 +76,7 @@ class App extends Component {
         const value = {
           items: this.state.items,
           lists: this.state.lists,
+          user: this.state.user,
           deleteItem: this.handleDeleteItem,
           deleteList: this.handleDeleteList,
           addItem: (item) => {
@@ -93,7 +94,10 @@ class App extends Component {
             this.setState({ user: user });
             console.log('did update user state')
           },
-          user: this.state.user
+          setLists: (lists) => {
+            this.setState({ lists: lists });
+            console.log('did update user lists')
+          }
         };
 
         // console.log(this.state.items)

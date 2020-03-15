@@ -24,11 +24,11 @@ export default class HomePage extends React.Component {
     }
 
     render() {
-        console.log('homepage');
+        console.log('homepage and user is ' + this.context.user.firstname);
         return (
             <div className="Homepage-Container">
                 <Dashboard name={this.context.user.firstname}></Dashboard>
-                <ListHomePage
+                <ListHomePage user={this.context.user}
                 ></ListHomePage>
             </div>
 
