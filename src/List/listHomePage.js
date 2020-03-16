@@ -37,6 +37,11 @@ export default class ListHomePage extends React.Component {
         console.log(lists)
         console.log('context lists length: ')
         console.log(lists.length)
+
+        lists.map(list => {
+          // console.log('list id')
+          // console.log(list.id)
+        })
         return (
             <div className='ListHomePage'>
               <ul className='ListHomePage__list'>

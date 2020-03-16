@@ -13,13 +13,16 @@ class ListMain extends React.Component {
   //   }
   // }
   static contextType = ApiContext
+
   componentDidMount(){
-    console.log('listMain component mounted');
+    const {listId} = this.props.match.params
+    console.log('listMain component mounted')
+    console.log('listId is')
+    console.log(listId)
     // console.log(this.state.lists);
     // console.log(this.state.lists);
-    console.log(this.context.lists.id);
-//this fetch call isn't right. I need to set the current list id instead of this.context.lists.id
-    fetch('http://localhost:8000/api/items/'+ this.context.user.id + '/' +this.context.lists.id, {
+    
+    fetch('http://localhost:8000/api/items/'+ listId, {
       method: 'GET',
       headers: {"Content-Type": "application/json"},
   })
@@ -36,7 +39,7 @@ class ListMain extends React.Component {
     // const { listId } = this.props.match.params
     // const {items=[]} = this.context
     // const itemsForList = getItemsForList(items, listId)
-    // console.log(items)
+    console.log(items)
     return (
       <section className='ItemListMain'>
         <ListMainNav/>
@@ -44,7 +47,7 @@ class ListMain extends React.Component {
           {items.map(item =>
             <li key={item.id}>
               <Item
-                id={item.id}
+                id={String(item.id)}
                 name={item.name}
                 priority={item.priority}
                 content={item.content}

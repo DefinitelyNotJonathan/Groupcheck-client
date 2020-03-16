@@ -4,6 +4,7 @@ import ApiContext from '../ApiContext'
 
 class List extends React.Component {
     static contextType= ApiContext;
+
     handleClickDelete = () => {
         const listId = this.props.id
         console.log('listId', listId)
@@ -17,11 +18,11 @@ class List extends React.Component {
         const id = this.props.id
         const name = this.props.name
         return (
-            <li key = {id} data-id = {id}>
+            <li key = {id} data-id = {id} >
                 <NavLink
                     className='ListHomePage__List-link'
                     to={`/list/${id}`}
-                >
+>
                 {name}
                 </NavLink>
                 <button

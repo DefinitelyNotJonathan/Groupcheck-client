@@ -3,6 +3,8 @@ import React from 'react'
 export default React.createContext({
   items:[],
   lists: [],
+  user: {},
+  currentList: [],
   addList: () => {},
   addItem: () => {},
   deleteItem: () => {},
@@ -10,5 +12,4 @@ export default React.createContext({
   setUser: () => {},
   setLists: () => {},
   setItems: () => {},
-  user: {}
 })

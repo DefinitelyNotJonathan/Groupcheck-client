@@ -16,7 +16,8 @@ class App extends Component {
   state = {
     items: [],
     lists: [],
-    user: {}
+    user: {},
+    currentList:[]
   }
     componentDidMount() {
 
@@ -77,6 +78,7 @@ class App extends Component {
           items: this.state.items,
           lists: this.state.lists,
           user: this.state.user,
+          currentList: this.state.currentList,
           deleteItem: this.handleDeleteItem,
           deleteList: this.handleDeleteList,
           addItem: (item) => {
@@ -105,6 +107,11 @@ class App extends Component {
             console.log('did update user items')
             console.log('this.state.items: ')
             console.log(this.state.items)
+          },
+          setCurrentList: (data) => {
+            this.setState({ currentList: data })
+            console.log('did set current list')
+            console.log('this.state.currentList')
           }
         };
 
