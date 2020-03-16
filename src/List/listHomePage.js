@@ -34,9 +34,9 @@ export default class ListHomePage extends React.Component {
     render(){
       let lists = this.context.lists
         console.log('this.context.lists: ')
-        console.log(this.context.lists)
+        console.log(lists)
         console.log('context lists length: ')
-        console.log(this.context.lists.length)
+        console.log(lists.length)
         return (
             <div className='ListHomePage'>
               <ul className='ListHomePage__list'>

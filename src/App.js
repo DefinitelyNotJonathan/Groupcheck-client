@@ -96,11 +96,18 @@ class App extends Component {
           },
           setLists: (data) => {
             this.setState({ lists: data });
-            console.log('did update user lists' + this.state.lists)
+            console.log('did update user lists')
+            console.log('this.state.lists: ')
+            console.log (this.state.lists)
+          },
+          setItems: (data) => {
+            this.setState({ items: data })
+            console.log('did update user items')
+            console.log('this.state.items: ')
+            console.log(this.state.items)
           }
         };
 
-        // console.log(this.state.items)
         return (
             <ApiContext.Provider value={value}>
                 <div className="App">

@@ -9,5 +9,6 @@ export default React.createContext({
   deleteList: () => {},
   setUser: () => {},
   setLists: () => {},
+  setItems: () => {},
   user: {}
 })
