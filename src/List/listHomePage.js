@@ -25,26 +25,29 @@ export default class ListHomePage extends React.Component {
   })
     .then(res => res.json())
     .then(data => {
-      console.log('this is data ' + data)
-      this.context.setLists({lists: data})
-      // console.log('state lists ' + this.state.lists)
+      console.log('this is data: ')
+      console.log(data)
+      this.context.setLists(data)
     })
 }
   
     render(){
+      let lists = this.context.lists
+        console.log('this.context.lists: ')
         console.log(this.context.lists)
+        console.log('context lists length: ')
+        console.log(this.context.lists.length)
         return (
             <div className='ListHomePage'>
               <ul className='ListHomePage__list'>
                 {
-                // this.context.lists.map( list => (
-                //     <List 
-                //         key= {list.id}
-                //         id = {list.id}
-                //         name = {list.name}
-                //     />
-                // ))
-                }
+                lists.map( list => (
+                    <List 
+                        key= {list.id}
+                        id = {list.id}
+                        name = {list.name}
+                    />
+                )) }
               </ul>
               <Link to='/add-list'>Add a list</Link>
             </div>

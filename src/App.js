@@ -94,9 +94,9 @@ class App extends Component {
             this.setState({ user: user });
             console.log('did update user state')
           },
-          setLists: (lists) => {
-            this.setState({ lists: lists });
-            console.log('did update user lists')
+          setLists: (data) => {
+            this.setState({ lists: data });
+            console.log('did update user lists' + this.state.lists)
           }
         };
 
