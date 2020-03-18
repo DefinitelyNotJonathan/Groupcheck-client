@@ -4,71 +4,73 @@ import ApiContext from '../ApiContext'
 class AddItem extends React.Component {
     static contextType=ApiContext;
 
+    constructor(props){
+        super(props)
+        this.handleSubmit=this.handleSubmit.bind(this)
+    }
+
+
     handleSubmit(e){
         e.preventDefault();
-        const data = new FormData(e.target);
-
-        fetch('http://localhost:8000/api/users/:user_id/lists/:list_id', {
+        let data = {
+            key: e.target.itemName.value,
+            name: e.target.itemName.value,
+            priority: e.target.itemPriority.value,
+            list_Id: e.target.listId.value,
+            user_Id: this.context.user.id,
+            content: e.target.itemContent.value
+        }
+        console.log(data)
+        if(data.name === '') {
+            alert('please complete the required fields');
+            return false;
+        } else if(data.content === '') {
+            alert('please complete the required fields');
+            return false;
+        } else if(data.priority === '') {
+            alert('please complete the required fields');
+            return false;
+        }
+        fetch('http://localhost:8000/api/items/' + data.list_Id, {
             method: 'POST',
-            body: data,
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
         })
         .then(res => res.json())
-        .then((data) => {
-            console.log(data);
+        .then((item) => {
+            console.log('response item')
+            console.log(item)
+            this.context.addItem(item)
+            console.log('did call this.context.setUser()');
+            console.log('check user state:');
+            console.log(this.context.items);
+            this.props.history.goBack();
         })
-        //need to navigate to home page from here
     }
+
+    // handleSubmit(e){
+    //     e.preventDefault();
+    //     // console.log('hello')
+    //     console.log(e.target)
+        
+    //     const data = new FormData(e.target);
+    //     let sendData = {};
+    //     for (var key of data.entries()) {
+    // 			console.log(key[0] + ', ' + key[1]);
+    //       sendData[key[0]] = key[1];
+    //     }
+    //     console.log('sendData:');
+    //     console.log(sendData);
+                    // fetch(`${config.API_ENDPOINT}/items`, {
+
+    // }
 
     render() {
 
         const lists = this.context.lists;
         return (
             <div>
-                <form onSubmit={((e)=> {
-                e.preventDefault();
-                let data = {
-                    key: e.target.itemName.value,
-                    id:null,
-                    name: e.target.itemName.value,
-                    priority: e.target.itemPriority.value,
-                    listId: e.target.listId.value,
-                    content: e.target.itemContent.value
-                }
-                if(data.name === '') {
-                    alert('please complete the required fields');
-                    return false;
-                } else if(data.content === '') {
-                    alert('please complete the required fields');
-                    return false;
-                } else if(data.priority === '') {
-                    alert('please complete the required fields');
-                    return false;
-                }
-                this.context.addItem(data)
-                this.props.history.goBack();
-//
-                // fetch(`${config.API_ENDPOINT}/items`, {
-                //     method: 'POST',
-                //     headers: {
-                //     'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify(data),
-                // })
-                //     .then(res => {
-                //     if (!res.ok)
-                //         return res.json().then(e => Promise.reject(e))
-                //     return res.json()
-                //     })
-
-
-
-
-                    // //
-                    // .catch(error => {
-                    // console.error({ error })
-                    // }) 
-                
-            } )}>
+                <form onSubmit={this.handleSubmit} >
                 
                 <label htmlFor='nameInput'>item name*</label>
                 <input id='nameInput' type="text" name="itemName" placeholder="New Item Name"></input>

@@ -83,12 +83,12 @@ class App extends Component {
           deleteList: this.handleDeleteList,
           addItem: (item) => {
               console.log(item);
-              item.id = Math.floor(Math.random()*1E16).toString();
+              // item.id = Math.floor(Math.random()*1E16).toString();
               this.state.items.push(item);
               this.setState(this.state);
           },
           addList: (list) => {
-            list.id = Math.floor(Math.random()*1E16).toString();
+            // list.id = Math.floor(Math.random()*1E16).toString();
             this.state.lists.push(list);
             this.setState(this.state);
           },
