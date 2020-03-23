@@ -35,6 +35,7 @@ class ListMain extends React.Component {
 }
 
   render() {
+    console.log(this.context)
     let items = this.context.items
     // const { listId } = this.props.match.params
     // const {items=[]} = this.context

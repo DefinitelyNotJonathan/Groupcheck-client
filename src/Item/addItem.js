@@ -16,8 +16,8 @@ class AddItem extends React.Component {
             key: e.target.itemName.value,
             name: e.target.itemName.value,
             priority: e.target.itemPriority.value,
-            list_Id: e.target.listId.value,
-            user_Id: this.context.user.id,
+            list_id: e.target.listId.value,
+            user_id: this.context.user.id,
             content: e.target.itemContent.value
         }
         console.log(data)
@@ -31,7 +31,7 @@ class AddItem extends React.Component {
             alert('please complete the required fields');
             return false;
         }
-        fetch('http://localhost:8000/api/items/' + data.list_Id, {
+        fetch('http://localhost:8000/api/items/' + data.list_id, {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data)
