@@ -7,6 +7,19 @@ class Item extends React.Component {
 
   static contextType = ApiContext;
 
+componentDidMount(){
+            //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
+
+    //   fetch('http://localhost:8000/api/lists/:author/', {
+    //     // credentials: 'include'
+    // })
+    //   .then (data => {
+    //     if (data.status !== 204) {
+    //       this.props.history.push('/landingPage')
+    //     }
+    //   })
+}
+
   handleClickDelete = () => {
   
     const itemId = this.props.id

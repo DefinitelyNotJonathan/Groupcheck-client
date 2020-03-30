@@ -1,5 +1,5 @@
-import React from 'react';
-import Route from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 import ApiContext from '../ApiContext'
 
 export default class Login extends React.Component {
@@ -42,7 +42,7 @@ export default class Login extends React.Component {
               console.log('did call this.context.setUser()');
               console.log('check user state:');
               console.log(this.context.user);
-              this.props.history.push('/home')
+              this.props.history.push('/')
 
           }else{
             // some problem with the data load!
@@ -58,6 +58,7 @@ export default class Login extends React.Component {
         fetch('http://localhost:8000/api/login', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
+            credentials: 'include',
             body: JSON.stringify(data)
         })
         .then(res => res.json())
@@ -96,6 +97,7 @@ export default class Login extends React.Component {
                  <div>
                      <button type="submit" >submit</button>
                  </div>
+                 <Link to="/signup">Sign Up</Link>
              </form>
          </div>
 

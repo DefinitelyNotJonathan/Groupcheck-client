@@ -21,6 +21,18 @@ export default class HomePage extends React.Component {
       console.log('the app user is: ' + this.context.user.firstname);
       // user is held in: this.context.user
 
+
+          //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
+
+    //   fetch('http://localhost:8000/api/lists/:author/', {
+    //     // credentials: 'include'
+    // })
+    //   .then (data => {
+    //     if (data.status !== 204) {
+    //       this.props.history.push('/landingPage')
+    //     }
+    //   })
+        
     }
 
     render() {

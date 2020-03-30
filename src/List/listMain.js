@@ -21,10 +21,20 @@ class ListMain extends React.Component {
     console.log(listId)
     // console.log(this.state.lists);
     // console.log(this.state.lists);
-    
+
+          //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
+
+    //   fetch('http://localhost:8000/api/lists/:author/', {
+    //     // credentials: 'include'
+    // })
+    //   .then (data => {
+    //     if (data.status !== 204) {
+    //       this.props.history.push('/landingPage')
+    //     }
+    //   })
+
     fetch('http://localhost:8000/api/items/'+ listId, {
-      method: 'GET',
-      headers: {"Content-Type": "application/json"},
+        credentials: 'include'
   })
     .then(res => res.json())
     .then(data => {

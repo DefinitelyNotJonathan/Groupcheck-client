@@ -2,6 +2,7 @@ import React from 'react'
 import ApiContext from '../ApiContext'
 
 class AddItem extends React.Component {
+
     static contextType=ApiContext;
 
     constructor(props){
@@ -9,6 +10,18 @@ class AddItem extends React.Component {
         this.handleSubmit=this.handleSubmit.bind(this)
     }
 
+    componentDidMount(){
+          //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
+
+    //   fetch('http://localhost:8000/api/lists/:author/', {
+    //     // credentials: 'include'
+    // })
+    //   .then (data => {
+    //     if (data.status !== 204) {
+    //       this.props.history.push('/landingPage')
+    //     }
+    //   })
+    }
 
     handleSubmit(e){
         e.preventDefault();
@@ -20,6 +33,8 @@ class AddItem extends React.Component {
             user_id: this.context.user.id,
             content: e.target.itemContent.value
         }
+        console.log('handlesubmit, context below')
+        console.log(this.context)
         console.log(data)
         if(data.name === '') {
             alert('please complete the required fields');
@@ -33,6 +48,7 @@ class AddItem extends React.Component {
         }
         fetch('http://localhost:8000/api/items/' + data.list_id, {
             method: 'POST',
+            credentials: 'include',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data)
         })

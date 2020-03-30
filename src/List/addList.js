@@ -8,6 +8,18 @@ class AddList extends React.Component {
         super(props);
         this.handleSubmit= this.handleSubmit.bind(this);
     }
+componentDidMount(){
+          //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
+
+    //   fetch('http://localhost:8000/api/lists/:author/', {
+    //     // credentials: 'include'
+    // })
+    //   .then (data => {
+    //     if (data.status !== 204) {
+    //       this.props.history.push('/landingPage')
+    //     }
+    //   })
+}
 
 handleSubmit(e) {
     e.preventDefault();
@@ -22,6 +34,7 @@ handleSubmit(e) {
     // fetch(`${config.API_ENDPOINT}/lists`, {
     fetch('http://localhost:8000/api/lists/'+this.context.user.id, {
         method: 'POST',
+        credentials: 'include',
         headers: {
         'content-type': 'application/json'
         },

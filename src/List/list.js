@@ -21,7 +21,7 @@ class List extends React.Component {
             <li key = {id} data-id = {id} >
                 <NavLink
                     className='ListHomePage__List-link'
-                    to={`/list/${id}`}
+                    to={`/lists/${id}`}
 >
                 {name}
                 </NavLink>

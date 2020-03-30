@@ -19,9 +19,20 @@ export default class ListHomePage extends React.Component {
     // console.log(this.state.lists);
     console.log(this.context.user.id);
 
+          //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
+
+    //   fetch('http://localhost:8000/api/lists/:author/', {
+    //     // credentials: 'include'
+    // })
+    //   .then (data => {
+    //     if (data.status !== 204) {
+    //       this.props.history.push('/landingPage')
+    //     }
+    //   })
+
     fetch('http://localhost:8000/api/lists/'+ this.context.user.id, {
       method: 'GET',
-      headers: {"Content-Type": "application/json"},
+      credentials: 'include',
   })
     .then(res => res.json())
     .then(data => {
@@ -38,10 +49,10 @@ export default class ListHomePage extends React.Component {
         console.log('context lists length: ')
         console.log(lists.length)
 
-        lists.map(list => {
-          // console.log('list id')
-          // console.log(list.id)
-        })
+        // lists.map(list => {
+        //   // console.log('list id')
+        //   // console.log(list.id)
+        // })
         return (
             <div className='ListHomePage'>
               <ul className='ListHomePage__list'>

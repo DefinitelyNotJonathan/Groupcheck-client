@@ -27,6 +27,7 @@ export default class SignUp extends React.Component {
         console.log(sendData);
         fetch('http://localhost:8000/api/users', {
             method: 'POST',
+            credentials: 'include',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(sendData)
         })

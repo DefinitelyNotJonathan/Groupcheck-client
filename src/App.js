@@ -6,7 +6,7 @@ import STORE from './store';
 import AddList from './List/addList';
 import AddItem from './Item/addItem';
 import ErrorBoundary from './ErrorBoundary';
-import LandingPage from './landingPage/landingPage';
+// import LandingPage from './landingPage/landingPage';
 import HomePage from './homePage/homePage';
 import Login from './login/login';
 import SignUp from './signUp/signUp';
@@ -30,10 +30,9 @@ class App extends Component {
     renderMainRoutes() {
         return (
             <>
-              <Route exact path="/" component={LandingPage} />
+              <Route exact path="/" component={HomePage} />
               <Route path = "/login" component={Login} />
               <Route path = "/signup" component={SignUp} />
-              <Route exact path = "/home" component={HomePage} />
               <Route exact path = "/list/:listId" component = {ListMain} />
               <Route path="/add-list" component={AddList} />
               <Route path="/add-item" component={AddItem} />
