@@ -21,14 +21,14 @@ export default class ListHomePage extends React.Component {
 
           //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
 
-    //   fetch('http://localhost:8000/api/lists/:author/', {
-    //     // credentials: 'include'
-    // })
-    //   .then (data => {
-    //     if (data.status !== 204) {
-    //       this.props.history.push('/landingPage')
-    //     }
-    //   })
+      fetch('http://localhost:8000/api/lists/:author/', {
+        // credentials: 'include'
+    })
+      .then (data => {
+        if (data.status !== 204) {
+          this.props.history.push('/landingPage')
+        }
+      })
 
     fetch('http://localhost:8000/api/lists/'+ this.context.user.id, {
       method: 'GET',
