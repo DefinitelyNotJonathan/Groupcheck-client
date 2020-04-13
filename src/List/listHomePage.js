@@ -1,12 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import List from './list'
 import ApiContext from '../ApiContext'
 
 export default class ListHomePage extends React.Component {
  
   static contextType = ApiContext;
-
+  state = {
+    toLogin:false
+  }
   // constructor(props){
   //   super(props);
   //   console.log(props);
@@ -26,7 +28,9 @@ export default class ListHomePage extends React.Component {
     })
       .then (data => {
         if (data.status !== 204) {
-          this.props.history.push('/landingPage')
+          this.setState({
+            toLogin:true
+          })
         }
       })
 
@@ -43,6 +47,10 @@ export default class ListHomePage extends React.Component {
 }
   
     render(){
+
+      if(this.state.toLogin===true){
+        return <Redirect to='/login'/>
+      }
       let lists = this.context.lists
         console.log('this.context.lists: ')
         console.log(lists)
