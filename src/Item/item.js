@@ -22,28 +22,30 @@ componentDidMount(){
 
   handleClickDelete = () => {
   
-    const itemId = this.props.id
+    const listId = this.props.list_id
+    const itemId= this.props.id
     console.log('itemId', itemId)
-    this.context.deleteItem(itemId)
+    // this.context.deleteItem(itemId)
+    console.log('listId', listId)
 
-
-    // fetch(`${config.API_ENDPOINT}/item/${itemId}`, {
-    //   method: 'DELETE',
-    //   headers: {
-    //     'content-type': 'application/json'
-    //   },
-    // })
-    //   .then(res => {
-    //     if (!res.ok)
-    //       return res.json().then(e => Promise.reject(e))
-    //     return res.json()
-    //   })
-    //   .then(() => {
-        // this.context.deleteItem(itemId)
+    fetch('http://localhost:8000/items/' + listId, {
+      method: 'DELETE',
+      credentials: 'include',
+      // headers: {
+      //   'content-type': 'application/json'
+      // },
+    })
+      .then(res => {
+        if (!res.ok)
+          return res.json().then(e => Promise.reject(e))
+        return res.json()
+      })
+      // .then(() => {
+      //   this.context.deleteItem(itemId)
       // })
-      // .catch(error => {
-      //   console.error({ error })
-      // })
+      .catch(error => {
+        console.error({ error })
+      })
   }
   render() {
     const { name, content, priority } = this.props

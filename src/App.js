@@ -33,7 +33,7 @@ class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route path = "/login" component={Login} />
               <Route path = "/signup" component={SignUp} />
-              <Route exact path = "/list/:listId" component = {ListMain} />
+              <Route exact path = "/lists/:listId" component = {ListMain} />
               <Route path="/add-list" component={AddList} />
               <Route path="/add-item" component={AddItem} />
 

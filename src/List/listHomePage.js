@@ -22,21 +22,22 @@ export default class ListHomePage extends React.Component {
     console.log(this.context.user.id);
 
           //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
-
-      fetch('http://localhost:8000/api/lists/:author/', {
-        // credentials: 'include'
+//dont forget that eventually this will be `${config.API_ENDPONT}/api/lists/`
+      fetch('http://localhost:8000/api/lists/', {
+        credentials: 'include'
     })
       .then (data => {
-        if (data.status !== 204) {
+        if (data.status === 403) {
           this.setState({
             toLogin:true
           })
         }
       })
-
-    fetch('http://localhost:8000/api/lists/'+ this.context.user.id, {
+// I use the above then and if to check for session, could I just combine this into one, and erase
+// this next fetch by using "else" ?
+    fetch('http://localhost:8000/api/lists/' ,{
       method: 'GET',
-      credentials: 'include',
+      credentials: 'include'
   })
     .then(res => res.json())
     .then(data => {
