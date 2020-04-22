@@ -49,7 +49,8 @@ class App extends Component {
         this.setState({
             items: this.state.items.filter(item => item.id !== id)
         });
-
+        console.log('this.state.items')
+        console.log(this.state.items)
     }
 
     handleDeleteList = (id) => {

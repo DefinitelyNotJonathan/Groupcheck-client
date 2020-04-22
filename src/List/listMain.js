@@ -24,15 +24,17 @@ class ListMain extends React.Component {
 
           //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
 
-    //   fetch('http://localhost:8000/api/lists/:author/', {
-    //     credentials: 'include'
-    // })
-    //   .then (data => {
-    //     if (data.status !== 204) {
-    //       this.props.history.push('/login')
-    //     }
-    //   })
-
+    fetch('http://localhost:8000/api/lists/', {
+        credentials: 'include'
+    })
+      .then (data => {
+        if (data.status === 403) {
+          this.setState({
+            toLogin:true
+          })
+        }
+      })
+      
     fetch('http://localhost:8000/api/items/'+listId,{
         credentials: 'include'
   })

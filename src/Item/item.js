@@ -25,12 +25,15 @@ componentDidMount(){
     const listId = this.props.list_id
     const itemId= this.props.id
     console.log('itemId', itemId)
-    // this.context.deleteItem(itemId)
     console.log('listId', listId)
 
-    fetch('http://localhost:8000/items/' + listId, {
+    fetch('http://localhost:8000/api/items/' + listId + '/' + itemId, {
       method: 'DELETE',
       credentials: 'include',
+      body: JSON.stringify({
+        id: itemId,
+        list_id: listId
+      })
       // headers: {
       //   'content-type': 'application/json'
       // },
@@ -38,11 +41,11 @@ componentDidMount(){
       .then(res => {
         if (!res.ok)
           return res.json().then(e => Promise.reject(e))
-        return res.json()
+        console.log('delete worked!')
       })
-      // .then(() => {
-      //   this.context.deleteItem(itemId)
-      // })
+      .then(() => {
+        this.context.deleteItem(itemId)
+      })
       .catch(error => {
         console.error({ error })
       })
