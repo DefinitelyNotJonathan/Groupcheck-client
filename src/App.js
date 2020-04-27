@@ -46,8 +46,9 @@ class App extends Component {
         // if(this.state.items){
         //     console.log(this.state.items);
         // }
+        let newItems = this.state.items.filter(item => item.id !== id)
         this.setState({
-            items: this.state.items.filter(item => item.id !== id)
+            items: newItems
         });
         console.log('this.state.items')
         console.log(this.state.items)

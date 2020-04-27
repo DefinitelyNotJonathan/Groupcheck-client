@@ -7,8 +7,26 @@ class List extends React.Component {
 
     handleClickDelete = () => {
         const listId = this.props.id
+        const stringListId = String(listId)
         console.log('listId', listId)
-        this.context.deleteList(listId)
+        fetch('http://localhost:8000/api/lists/' + stringListId, {
+            method: 'DELETE',
+            credentials: 'include',
+            body: JSON.stringify({
+                list_id: listId
+            })
+        })
+        .then(res => {
+            if (!res.ok)
+              return res.json().then(e => Promise.reject(e))
+            console.log('delete worked!')
+          })
+          .then(() => {
+            this.context.deleteList(listId)
+        })
+          .catch(error => {
+            console.error({ error })
+          })
     }
 
     componentDidUpdate() {

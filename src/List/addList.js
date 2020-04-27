@@ -1,4 +1,5 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 import ApiContext from '../ApiContext.js'
 
 class AddList extends React.Component {
@@ -6,11 +7,15 @@ class AddList extends React.Component {
 
     constructor(props){
         super(props);
+        this.state={
+            toLogin:false
+        }
         this.handleSubmit= this.handleSubmit.bind(this);
     }
 componentDidMount(){
           //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
-
+console.log('ADD LIST state before the fetch')
+console.log(this.state)
     fetch('http://localhost:8000/api/lists/', {
         credentials: 'include'
     })
@@ -34,7 +39,7 @@ handleSubmit(e) {
         return false;
         }
     // fetch(`${config.API_ENDPOINT}/lists`, {
-    fetch('http://localhost:8000/api/lists/'+this.context.user.id, {
+    fetch('http://localhost:8000/api/lists/', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -49,13 +54,16 @@ handleSubmit(e) {
     })
     .then(list => {
         this.context.addList(list)
-        this.props.history.push('/home');
+        this.props.history.push('/');
     })
     .catch(error => {
         console.error({ error })
     }) 
 }
     render() {
+        if(this.state.toLogin===true){
+            return <Redirect to='/login'/>
+          }
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>

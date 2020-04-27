@@ -1,4 +1,5 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 import Item from '../Item/item'
 import ApiContext from '../ApiContext'
 // import {getItemsForList} from '../itemsHelpers'
@@ -13,6 +14,13 @@ class ListMain extends React.Component {
   //   }
   // }
   static contextType = ApiContext
+
+  constructor(props){
+    super(props);
+    this.state={
+        toLogin:false
+    }
+  }  
 
   componentDidMount(){
     const {listId} = this.props.match.params
@@ -34,7 +42,7 @@ class ListMain extends React.Component {
           })
         }
       })
-      
+
     fetch('http://localhost:8000/api/items/'+listId,{
         credentials: 'include'
   })
@@ -47,19 +55,22 @@ class ListMain extends React.Component {
 }
 
   render() {
-
+    if(this.state.toLogin===true){
+      return <Redirect to='/login'/>
+    }
     console.log(this.context)
     let items = this.context.items
+    console.log('CONTEXT ITEMS')
     console.log(items)
     return (
       <section className='ItemListMain'>
         <ListMainNav/>
         <ul>
-          {items.map(item =>
+          {items.map(item => 
             <li key={item.id}>
               <Item
-                id={String(item.id)}
-                list_id={String(item.list_id)}
+                id={item.id}
+                list_id={item.list_id}
                 name={item.name}
                 priority={item.priority}
                 content={item.content}

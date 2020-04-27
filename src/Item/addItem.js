@@ -1,5 +1,21 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 import ApiContext from '../ApiContext'
+
+
+// class ListItem {
+//     constructor(
+//         key,
+//         id,
+//         name,
+//         content,
+//         priority, 
+//         list_id,
+//         user_id,    
+//     ){}
+  
+//   }
+  
 
 class AddItem extends React.Component {
 
@@ -7,6 +23,9 @@ class AddItem extends React.Component {
 
     constructor(props){
         super(props)
+        this.state = {
+            toLogin: false
+        }
         this.handleSubmit=this.handleSubmit.bind(this)
     }
 
@@ -27,7 +46,12 @@ class AddItem extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        let data = {
+        let data = 
+        // new ListItem(
+        //     e.target.itemName.value, null, e.target.itemName.value,e.target.itemContent.value,
+        //     e.target.itemPriority.value, e.target.listId.value, this.context.user.id
+        //     )
+             {
             key: e.target.itemName.value,
             name: e.target.itemName.value,
             priority: e.target.itemPriority.value,
@@ -84,7 +108,9 @@ class AddItem extends React.Component {
     // }
 
     render() {
-
+        if(this.state.toLogin===true){
+            return <Redirect to='/login'/>
+          }
         const lists = this.context.lists;
         return (
             <div>

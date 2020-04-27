@@ -18,16 +18,19 @@ componentDidMount(){
     //       this.props.history.push('/landingPage')
     //     }
     //   })
+    console.log(this.props.id)
 }
 
   handleClickDelete = () => {
   
-    const listId = this.props.list_id
-    const itemId= this.props.id
+    let listId = this.props.list_id
+    let itemId= this.props.id
+    let stringItemId = String(itemId)
+    let stringListId = String(listId)
     console.log('itemId', itemId)
     console.log('listId', listId)
 
-    fetch('http://localhost:8000/api/items/' + listId + '/' + itemId, {
+    fetch('http://localhost:8000/api/items/' + stringListId + '/' + stringItemId, {
       method: 'DELETE',
       credentials: 'include',
       body: JSON.stringify({
@@ -83,7 +86,7 @@ componentDidMount(){
   }
 }
 Item.propTypes={
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired
 };
 

@@ -40,7 +40,7 @@ export default class SignUp extends React.Component {
                 console.log('did call this.context.setUser()');
                 console.log('check user state:');
                 console.log(this.context.user);
-                this.props.history.push('/home')
+                this.props.history.push('/login')
             }
         })
     }
