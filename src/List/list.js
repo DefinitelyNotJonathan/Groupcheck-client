@@ -1,9 +1,16 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import ApiContext from '../ApiContext'
 
 class List extends React.Component {
     static contextType= ApiContext;
+    constructor(props) {
+        super(props);
+        this.state={
+            listName: this.props.name,
+            listId: this.props.id
+        }
+    }
 
     handleClickDelete = () => {
         const listId = this.props.id
@@ -34,15 +41,20 @@ class List extends React.Component {
     }
     render() {
         const id = this.props.id
-        const name = this.props.name
+        // const name = this.props.name
+        console.log('LIST this.state.name')
+        console.log(this.state.listName)
         return (
             <li key = {id} data-id = {id} >
-                <NavLink
+                <Link
                     className='ListHomePage__List-link'
-                    to={`/lists/${id}`}
+                    to={{
+                        pathname: `/lists/${id}`,
+                        state: {listName: this.props.name}
+                    }}
 >
-                {name}
-                </NavLink>
+                {this.state.listName}
+                </Link>
                 <button
                   className='List__delete'
                   type='button'
@@ -51,6 +63,19 @@ class List extends React.Component {
                   {' '}
                   remove
                 </button>
+                <Link 
+                    className = 'Share_List-link'
+                    to={{
+                        pathname: '/share-list',
+                        state: {
+                            listName: this.props.name,    
+                            listId: this.props.id
+                        }
+                    }}
+                >
+                    Share
+                </Link>
+
             </li>
         )
     }

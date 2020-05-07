@@ -5,6 +5,7 @@ import ApiContext from './ApiContext';
 import STORE from './store';
 import AddList from './List/addList';
 import AddItem from './Item/addItem';
+import ShareList from './share/shareList';
 import ErrorBoundary from './ErrorBoundary';
 // import LandingPage from './landingPage/landingPage';
 import HomePage from './homePage/homePage';
@@ -21,10 +22,10 @@ class App extends Component {
   }
     componentDidMount() {
 
-      this.setState(STORE);
-      console.log('App Ready');
-      // output app state to view starting values
-      console.log(this.state);
+      // this.setState(STORE);
+      // console.log('App Ready');
+      // // output app state to view starting values
+      // console.log(this.state);
     }
 
     renderMainRoutes() {
@@ -36,6 +37,7 @@ class App extends Component {
               <Route exact path = "/lists/:listId" component = {ListMain} />
               <Route path="/add-list" component={AddList} />
               <Route path="/add-item" component={AddItem} />
+              <Route path= "/share-list" component={ShareList} />
 
             </>
         );
@@ -113,6 +115,7 @@ class App extends Component {
             this.setState({ currentList: data })
             console.log('did set current list')
             console.log('this.state.currentList')
+            console.log(this.state.currentList)
           }
         };
 

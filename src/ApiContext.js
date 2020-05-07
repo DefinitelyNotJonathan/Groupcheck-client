@@ -12,4 +12,5 @@ export default React.createContext({
   setUser: () => {},
   setLists: () => {},
   setItems: () => {},
+  setCurrentList: () => {},
 })

@@ -18,15 +18,23 @@ class ListMain extends React.Component {
   constructor(props){
     super(props);
     this.state={
+        // name:this.state.name,
         toLogin:false
     }
   }  
 
   componentDidMount(){
-    const {listId} = this.props.match.params
+    const listName = this.props.location.state
+    this.listNavProp = Object.values(listName)
+    const {listId } = this.props.match.params
     console.log('listMain component mounted')
     console.log('listId is')
     console.log(listId)
+    console.log('LISTMAIN name is')
+    console.log(this.listNavProp)
+    // this.listNavNewProp = Object.values(this.listNavProp)
+    // console.log('this.listNavProps after Object.values')
+    // console.log(this.listNavNewProp)
     // console.log(this.state.lists);
     // console.log(this.state.lists);
 
@@ -62,9 +70,11 @@ class ListMain extends React.Component {
     let items = this.context.items
     console.log('CONTEXT ITEMS')
     console.log(items)
+    console.log('LISTNAVPROP IN RENDER')
+    console.log(this.listNavProp)
     return (
       <section className='ItemListMain'>
-        <ListMainNav/>
+        <ListMainNav listName = {this.listNavProp} />
         <ul>
           {items.map(item => 
             <li key={item.id}>

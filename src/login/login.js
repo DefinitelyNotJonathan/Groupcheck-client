@@ -26,30 +26,18 @@ export default class Login extends React.Component {
         this.setState({email: e.target.value})
     }
 
-    fetchUser(){
-      console.log('fetchUser()', this.context.user.id);
-      fetch('http://localhost:8000/api/users/'+this.context.user.id, {
+    fetchUser(validUserId){
+      console.log('fetchUser()', validUserId);
+      return fetch('http://localhost:8000/api/users/'+validUserId, {
           method: 'GET',
           headers: {"Content-Type": "application/json"}
       })
-      .then(res => res.json())
-      .then((user) => {
-          console.log('then');
-          console.log(user);
-          if(user && user.hasOwnProperty("id")) {
-              console.log('user id' + user.id)
-              this.context.setUser(user)
-              console.log('did call this.context.setUser()');
-              console.log('check user state:');
-              console.log(this.context.user);
-              this.props.history.push('/')
-
-          }else{
-            // some problem with the data load!
-          }
+      .catch((error) => {
+          //issue with /api/users request
       })
-    }
+      .then(res => res.json())
 
+    }  
     handleSubmit(e){
       console.log('handleSubmit()');
         e.preventDefault();
@@ -68,15 +56,30 @@ export default class Login extends React.Component {
             console.log(data);
             if(data && data.hasOwnProperty("id")) {
                 console.log('user id' + data.id)
-                this.context.setUser({ id: data.id })
-                console.log('did call this.context.setUser()');
-                console.log('check user state:');
-                console.log(this.context.user);
+                return data.id
+                // this.context.setUser({ id: data.id })
+                // console.log('did call this.context.setUser()');
+                // console.log('check user state:');
+                // console.log(this.context.user);
             }else{
               throw new Error('Something went wrong');
             }
         })
-        .then(() => this.fetchUser())
+        .then((user_id) => this.fetchUser(user_id))
+        .then((user) => {
+            console.log('then fetchUser');
+            console.log(user);
+            if(user && user.hasOwnProperty('id')) {
+                console.log('user id' + user.id)
+                this.context.setUser(user)
+                console.log('did call this.context.setUser()')
+                console.log('check user state:');
+                console.log(this.context.user);
+                this.props.history.push('/')
+            } else {
+                // some problem with the data load!
+            }
+        })
         .catch( (error)=> {
           console.log('an error happened');
           console.log(error);
