@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 import ListMain from './List/listMain';
 import ApiContext from './ApiContext';
-import STORE from './store';
+// import STORE from './store';
 import AddList from './List/addList';
 import AddItem from './Item/addItem';
 import ShareList from './share/shareList';
