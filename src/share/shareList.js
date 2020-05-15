@@ -21,20 +21,20 @@ export default class ShareList extends React.Component {
 
 executeTheShare(shareId, listId){
     // fetch(`${config.API_ENDPOINT}/`, {
-    // const shareData = {
-    //     list_id: listId,
-    //     shared_by: '',
-    //     shared_to: shareId
-    // }
+    const shareData = {
+        list_id: listId,
+        shared_to: shareId
+    }
     fetch(`http://localhost:8000/api/share/${shareId}/${listId}`, {
         method: 'POST',
         credentials: 'include',
+        body: JSON.stringify(shareData)
     })
     .then(res => {
         console.log('console logged as res')
         console.log(res)
         if(res.ok){
-            res.json()
+            return res.json()
         }else{
             console.log('didnt work')
             return res.json().then(e => Promise.reject(e))
@@ -65,9 +65,9 @@ handleSubmit(e){
             console.log(data)
             console.log("SHARE RESPONSE DATA ID FROM GET")
             //I found a workaround by setting the array index to zero (below), but I'm not sure how to unwrap the response object to remove the array around it
-            console.log(data[0].id)
+            console.log(data.id)
             this.setState({
-                shareId:data[0].id
+                shareId:data.id
             })
             //I think I may actually need this to be a string?
             //cant get any if statements to work. data === this.state.email, data.hasOwnProperty("id") or "email", data === String(this.state.email)
