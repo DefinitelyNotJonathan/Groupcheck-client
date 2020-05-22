@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import ApiContext from '../ApiContext'
+import config from '../config'
 
 class List extends React.Component {
     static contextType= ApiContext;
@@ -16,7 +17,7 @@ class List extends React.Component {
         const listId = this.props.id
         const stringListId = String(listId)
         console.log('listId', listId)
-        fetch('http://localhost:8000/api/lists/' + stringListId, {
+        fetch(`${config.API_ENDPOINT}/api/lists/` + stringListId, {
             method: 'DELETE',
             credentials: 'include',
             body: JSON.stringify({

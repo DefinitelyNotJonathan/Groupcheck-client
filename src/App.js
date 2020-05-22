@@ -17,6 +17,7 @@ class App extends Component {
   state = {
     items: [],
     lists: [],
+    sharedLists: [],
     user: {},
     currentList:[]
   }
@@ -80,6 +81,7 @@ class App extends Component {
         const value = {
           items: this.state.items,
           lists: this.state.lists,
+          sharedLists: this.state.sharedLists,
           user: this.state.user,
           currentList: this.state.currentList,
           deleteItem: this.handleDeleteItem,
@@ -104,6 +106,12 @@ class App extends Component {
             console.log('did update user lists')
             console.log('this.state.lists: ')
             console.log (this.state.lists)
+          },
+          setSharedLists: (data) => {
+            this.setState({ sharedLists: data });
+            console.log('did update user shared lists')
+            console.log('this.state.sharedLists:')
+            console.log(this.state.sharedLists)
           },
           setItems: (data) => {
             this.setState({ items: data })

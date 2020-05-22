@@ -1,19 +1,36 @@
 import React from 'react';
+import { Redirect } from 'react-router';
+import config from '../config';
 
 export default class ShareList extends React.Component {
 
-        constructor(props){
-            super(props)
-            this.state={
-                email: '',
-                shareId:[],
-                listId: this.props.location.state.listId
+    constructor(props){
+        super(props)
+        this.state={
+            email: '',
+            shareId:[],
+            listId: this.props.location.state.listId,
+            toLogin: false
             }
 
-            this.handleEmail = this.handleEmail.bind(this);
-            this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEmail = this.handleEmail.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    componentDidMount(){
+        fetch(`${config.API_ENDPOINT}/api/lists/`, {
+            credentials: 'include'
+        })
+          .then (data => {
+            if (data.status === 403) {
+              this.setState({
+                toLogin:true
+              })
+            }
+          })
     
-        }
+    }
+
+    
 
     handleEmail(e) {
         this.setState({email: e.target.value})
@@ -25,7 +42,7 @@ executeTheShare(shareId, listId){
         list_id: listId,
         shared_to: shareId
     }
-    fetch(`http://localhost:8000/api/share/${shareId}/${listId}`, {
+    fetch(`${config.API_ENDPOINT}/api/share/${shareId}/${listId}`, {
         method: 'POST',
         credentials: 'include',
         body: JSON.stringify(shareData)
@@ -43,8 +60,8 @@ executeTheShare(shareId, listId){
     .then(list => {
         console.log('RESPONSE DATA FROM POST')
         console.log(list)
-        // alert(`${list} was successfully shared!`)
-        // this.props.history.push('/');
+        alert(`${list} was successfully shared!`)
+        this.props.history.push('/');
     })
     .catch(error => {
         console.error({ error })
@@ -56,7 +73,7 @@ handleSubmit(e){
         console.log('this.state.email')
         console.log(this.state.email)
         this.email= this.state.email
-        fetch(`http://localhost:8000/api/share/${this.email}`, {
+        fetch(`${config.API_ENDPOINT}/api/share/${this.email}`, {
             credentials: 'include',
         })
         .then(res => res.json())
@@ -85,6 +102,9 @@ handleSubmit(e){
 }
 
     render(){
+        if(this.state.toLogin === true){
+            return <Redirect to='/login'/>
+        }
         return (
             <div>
                 <h2>Share your list with a friend!</h2>

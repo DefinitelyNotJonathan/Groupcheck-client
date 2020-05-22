@@ -1,6 +1,7 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 import ApiContext from '../ApiContext'
+import config from '../config'
 
 
 // class ListItem {
@@ -32,7 +33,7 @@ class AddItem extends React.Component {
     componentDidMount(){
           //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
 
-        fetch('http://localhost:8000/api/lists/', {
+          fetch(`${config.API_ENDPOINT}/api/lists/`, {
             credentials: 'include'
         })
         .then (data => {
@@ -72,7 +73,7 @@ class AddItem extends React.Component {
             alert('please complete the required fields');
             return false;
         }
-        fetch('http://localhost:8000/api/items/' + data.list_id, {
+        fetch(`${config.API_ENDPOINT}/api/items/` + data.list_id, {
             method: 'POST',
             credentials: 'include',
             headers: {"Content-Type": "application/json"},

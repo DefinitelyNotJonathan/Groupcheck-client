@@ -1,6 +1,7 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 import ApiContext from '../ApiContext.js'
+import config from '../config'
 
 class AddList extends React.Component {
     static contextType=ApiContext;
@@ -16,7 +17,7 @@ componentDidMount(){
           //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
 console.log('ADD LIST state before the fetch')
 console.log(this.state)
-    fetch('http://localhost:8000/api/lists/', {
+fetch(`${config.API_ENDPOINT}/api/lists/`, {
         credentials: 'include'
     })
     .then (data => {
@@ -39,7 +40,7 @@ handleSubmit(e) {
         return false;
         }
     // fetch(`${config.API_ENDPOINT}/lists`, {
-    fetch('http://localhost:8000/api/lists/', {
+        fetch(`${config.API_ENDPOINT}/api/lists/`, {
         method: 'POST',
         credentials: 'include',
         headers: {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ApiContext from '../ApiContext'
+import config from '../config'
 
 export default class Login extends React.Component {
 
@@ -28,7 +29,7 @@ export default class Login extends React.Component {
 
     fetchUser(validUserId){
       console.log('fetchUser()', validUserId);
-      return fetch('http://localhost:8000/api/users/'+validUserId, {
+      return fetch(`${config.API_ENDPOINT}/api/users/`+validUserId, {
           method: 'GET',
           headers: {"Content-Type": "application/json"}
       })
@@ -43,7 +44,7 @@ export default class Login extends React.Component {
         e.preventDefault();
         const data = this.state;
         console.log(data)
-        fetch('http://localhost:8000/api/login', {
+        fetch(`${config.API_ENDPOINT}/api/login`, {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             credentials: 'include',

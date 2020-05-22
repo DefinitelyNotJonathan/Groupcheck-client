@@ -1,6 +1,7 @@
 import React from 'react'
 import ApiContext from '../ApiContext'
 import PropTypes from 'prop-types'
+import config from '../config'
 
 
 class Item extends React.Component {
@@ -30,7 +31,7 @@ componentDidMount(){
     console.log('itemId', itemId)
     console.log('listId', listId)
 
-    fetch('http://localhost:8000/api/items/' + stringListId + '/' + stringItemId, {
+    fetch(`${config.API_ENDPOINT}/api/items/` + stringListId + '/' + stringItemId, {
       method: 'DELETE',
       credentials: 'include',
       body: JSON.stringify({

@@ -5,6 +5,7 @@ import ApiContext from '../ApiContext'
 // import {getItemsForList} from '../itemsHelpers'
 import PropTypes from 'prop-types'
 import ListMainNav from './listMainNav'
+import config from '../config'
 
 
 class ListMain extends React.Component {
@@ -40,7 +41,7 @@ class ListMain extends React.Component {
 
           //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
 
-    fetch('http://localhost:8000/api/lists/', {
+      fetch(`${config.API_ENDPOINT}/api/lists/`, {
         credentials: 'include'
     })
       .then (data => {
@@ -51,7 +52,7 @@ class ListMain extends React.Component {
         }
       })
 
-    fetch('http://localhost:8000/api/items/'+listId,{
+    fetch(`${config.API_ENDPOINT}/api/items/`+listId,{
         credentials: 'include'
   })
     .then(res => res.json())

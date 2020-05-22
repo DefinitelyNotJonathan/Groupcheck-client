@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import List from './list'
 import ApiContext from '../ApiContext'
+import config from '../config'
 
 export default class ListHomePage extends React.Component {
  
@@ -22,8 +23,7 @@ export default class ListHomePage extends React.Component {
     console.log(this.context.user.id);
 
           //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
-//dont forget that eventually this will be `${config.API_ENDPONT}/api/lists/`
-      fetch('http://localhost:8000/api/lists/', {
+fetch(`${config.API_ENDPOINT}/api/lists/`, {
         credentials: 'include'
     })
       .then (data => {
@@ -35,24 +35,35 @@ export default class ListHomePage extends React.Component {
       })
 // I use the above then and if to check for session, could I just combine this into one, and erase
 // this next fetch by using "else" ?
-    fetch('http://localhost:8000/api/lists/' ,{
+fetch(`${config.API_ENDPOINT}/api/lists/` ,{
       method: 'GET',
       credentials: 'include'
-  })
+    })
     .then(res => res.json())
     .then(data => {
       console.log('this is data: ')
       console.log(data)
       this.context.setLists(data)
     })
-}
-  
+
+    fetch(`${config.API_ENDPOINT}/lists/shared` ,{
+      method: 'GET',
+      credentials: 'include'
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log('this is shared data: ')
+      console.log(data)
+      this.context.setSharedLists(data)
+    })
+  }
     render(){
 
       if(this.state.toLogin===true){
         return <Redirect to='/login'/>
       }
       let lists = this.context.lists
+      let sharedLists = this.context.sharedLists
         console.log('this.context.lists: ')
         console.log(lists)
         console.log('context lists length: ')
@@ -64,6 +75,7 @@ export default class ListHomePage extends React.Component {
         // })
         return (
             <div className='ListHomePage'>
+              <h2>Your Lists</h2>
               <ul className='ListHomePage__list'>
                 {
                 lists.map( list => (
@@ -74,6 +86,19 @@ export default class ListHomePage extends React.Component {
                     />
                 )) }
               </ul>
+              <h2>Lists Shared To You</h2>
+              <ul className = 'ListHomePage__sharedLists'>
+                {
+                  sharedLists.map(list => (
+                    <List 
+                    key= {list.id}
+                    id = {list.id}
+                    name = {list.name}
+                   />
+                  ))
+                }
+              </ul>
+
               <Link to='/add-list'>Add a list</Link>
             </div>
         )

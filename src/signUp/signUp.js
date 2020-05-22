@@ -1,5 +1,6 @@
 import React from 'react';
 import ApiContext from '../ApiContext'
+import config from '../config'
 
 export default class SignUp extends React.Component {
 
@@ -25,7 +26,7 @@ export default class SignUp extends React.Component {
         }
         console.log('sendData:');
         console.log(sendData);
-        fetch('http://localhost:8000/api/users', {
+        fetch(`${config.API_ENDPOINT}/api/users`, {
             method: 'POST',
             credentials: 'include',
             headers: {"Content-Type": "application/json"},
