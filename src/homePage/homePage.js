@@ -2,6 +2,7 @@ import React from 'react';
 import Dashboard from '../dashboard/dashboard';
 import ListHomePage from '../List/listHomePage';
 import ApiContext from '../ApiContext'
+import config from '../config'
 
 export default class HomePage extends React.Component {
 
@@ -24,14 +25,14 @@ export default class HomePage extends React.Component {
 
           //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
 
-    //   fetch('http://localhost:8000/api/lists/:author/', {
-    //     // credentials: 'include'
-    // })
-    //   .then (data => {
-    //     if (data.status !== 204) {
-    //       this.props.history.push('/landingPage')
-    //     }
-    //   })
+      fetch(`${config.API_ENDPOINT}/api/lists/:author/`, {
+        // credentials: 'include'
+    })
+      .then (data => {
+        if (data.status !== 204) {
+          this.props.history.push('/login')
+        }
+      })
         
     }
 
