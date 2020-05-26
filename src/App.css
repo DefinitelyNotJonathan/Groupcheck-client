@@ -1,0 +1,364 @@
+* {
+    box-sizing:border-box;
+}
+.App__header {
+    text-align: center;
+}
+form {
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+    background-color: rgba(100,100,100,0.85);
+    border-radius:6px;
+}
+
+/*Login>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.Login_container {
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+    display: inline-block;
+    min-width:100%
+}
+.Login_form {
+    border-style: solid;
+    border-color: red;
+    border-width: 2px;
+    max-height:30%;
+    max-width:70%;
+}
+.Login_header {
+    border-style: solid;
+    border-color: yellow;
+    border-width: 2px;
+}
+.Login_label {
+    border-style: solid;
+    border-color: green;
+    border-width: 2px;
+    display:block;
+    max-height:5%;
+}
+.Login_input {
+    border-style: solid;
+    border-color: purple;
+    border-width: 2px;
+    display:block;
+    width:100%;
+    min-height:35px;
+}
+.Login_buttoncontainer {
+    border-style: solid;
+    border-color: orangered;
+    border-width: 2px;
+    display:block;
+    text-align: center;
+    max-height:23%;
+    margin-top:3%;
+}
+.Login_button {
+    border-style: solid;
+    border-color: palevioletred;
+    border-width: 2px;
+    text-align: center;
+}
+.Login_signup {
+    border-style: solid;
+    border-color: brown;
+    border-width: 2px;
+    display: block;
+    text-align:center;
+    max-height:10%;
+}
+
+/*List unit for homepage>>>>>>>>>>>>>>>>>>*/
+
+.List{
+    display:block;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+}
+.ListHomePage__List-link {
+    display:inline-block;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+}
+.List_Buttons_Container{
+    display:inline;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+}
+.List__delete {
+    display:block;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+}
+.Share_List_Link {
+    display:block;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+}
+
+/*homepage>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.Homepage_Container {
+    border-style: solid;
+    border-color: red;
+    border-width: 3px;
+}
+.Dashboard_container {
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+    display:block;
+    text-align:center;
+    height:auto;
+}
+.ListHomePage_container {
+    border-style: solid;
+    border-color: green;
+    border-width: 2px;
+}
+.ListMainNav_container {
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+}
+.ListHomePage_h2{
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+    display:block;
+    padding:0px;
+    margin:0px;
+}
+.ListMain_itemlistcontainer {
+    border-style: solid;
+    border-color: red;
+    border-width: 2px;
+}
+/*would like to make circular*/
+.ListHomePage_addlist{
+    font-size:35px;
+    border-radius:20%;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+    display:inline;
+    margin-left:70%;
+    padding:0px;
+    
+}
+
+/*Add List >>>>>>>>>>>>>>>>>>>>*/
+
+.AddList_container {
+    border-style:solid;
+    border-color:black;
+    border-width:2px;
+    height: 200px;
+    display:block;
+    text-align:center;
+}
+.AddList_form {
+    border-style:solid;
+    border-color:purple;
+    border-width:1px;
+    display:block;
+    width: 60%;
+
+}
+.AddList_label {
+    border-style:solid;
+    border-color:green;
+    border-width:1px;
+}
+.AddList_input {
+    border-style:solid;
+    border-color:red;
+    border-width:1px;
+    display:block;
+    height:25px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%;
+    margin-bottom:5%;
+
+}
+.AddList_button {
+    border-style:solid;
+    border-color:blue;
+    border-width:1px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:3%;
+
+
+}
+.AddList_cancel-button {
+    display:block;
+}
+
+/*ListMain>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.ListMain_itemlistcontainer {
+
+}
+.ListMain_itemlist {
+
+}
+.ListMain_item {
+
+}
+.ListMainNav_container {
+
+}
+.ListMainNav_navbar {
+
+}
+.ListMainNav_header {
+
+}
+.ListMainNav_additem {
+
+}
+
+/*Item Unit for List Main >>>>>>>>>>>>>>>>>>>>*/
+.Item {
+
+}
+.Item__title {
+
+}
+.Item__priorities {
+
+}
+.Item_Priority {
+
+}
+.Item__content {
+
+}
+.Content {
+
+}
+.Item__delete {
+
+}
+
+/*Add Item >>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.AddItem_container {
+
+}
+.AddItem_form {
+    padding-bottom:3%;
+    width:60%;
+}
+.AddItem_label {
+    display:block;
+    padding-top:3%;
+    padding-bottom:3%;
+    padding-left:3%;
+}
+.AddItem_input {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom:3%;
+}
+.AddItem_textarea {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    min-width:65%;
+    padding-bottom:7%;
+}
+#AddItem_priority {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+#AddItem_listselector {
+
+}
+.AddItem_button {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:3%;
+}
+
+/*share>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.ShareList_container {
+
+}
+.ShareList_header {
+
+}
+.ShareList_form {
+
+}
+.ShareList_label {
+
+}
+.ShareList_input {
+
+}
+.ShareList_content {
+
+}
+.ShareList_button {
+
+}
+.ShareList_cancel_button {
+
+}
+
+/*Sign Up>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.SignUp_container {
+
+}
+.SignUp_form {
+
+}
+.SignUp_label {
+
+}
+.SignUp_input {
+
+}
+.SignUp_button {
+
+}
+
+@media screen and (min-width:768px) {
+
+    form {
+      width:50%;
+    }
+    button {
+      width:30%;
+      font-size:24px;
+    }
+}
+@media screen and (min-width:1024px) {
+
+    form {
+      width:40%;
+    }
+}  
+
+@media screen and (min-width:1200px) {
+
+}
+  

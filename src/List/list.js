@@ -1,13 +1,13 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ApiContext from '../ApiContext'
 import config from '../config'
 
 class List extends React.Component {
-    static contextType= ApiContext;
+    static contextType = ApiContext;
     constructor(props) {
         super(props);
-        this.state={
+        this.state = {
             listName: this.props.name,
             listId: this.props.id
         }
@@ -24,17 +24,17 @@ class List extends React.Component {
                 list_id: listId
             })
         })
-        .then(res => {
-            if (!res.ok)
-              return res.json().then(e => Promise.reject(e))
-            console.log('delete worked!')
-          })
-          .then(() => {
-            this.context.deleteList(listId)
-        })
-          .catch(error => {
-            console.error({ error })
-          })
+            .then(res => {
+                if (!res.ok)
+                    return res.json().then(e => Promise.reject(e))
+                console.log('delete worked!')
+            })
+            .then(() => {
+                this.context.deleteList(listId)
+            })
+            .catch(error => {
+                console.error({ error })
+            })
     }
 
     componentDidUpdate() {
@@ -46,36 +46,39 @@ class List extends React.Component {
         console.log('LIST this.state.name')
         console.log(this.state.listName)
         return (
-            <li key = {id} data-id = {id} >
+            <li key={id} data-id={id} className='List'>
                 <Link
                     className='ListHomePage__List-link'
                     to={{
                         pathname: `/lists/${id}`,
-                        state: {listName: this.props.name}
+                        state: { listName: this.props.name }
                     }}
->
-                {this.state.listName}
-                </Link>
-                <button
-                  className='List__delete'
-                  type='button'
-                  onClick={this.handleClickDelete}
                 >
-                  {' '}
+                    {this.state.listName}
+                </Link>
+                <div className='List_Buttons_Container'>
+                    <button
+                        className='List__delete'
+                        type='button'
+                        onClick={this.handleClickDelete}
+                    >
+                        {' '}
                   remove
                 </button>
-                <Link 
-                    className = 'Share_List-link'
-                    to={{
-                        pathname: '/share-list',
-                        state: {
-                            listName: this.props.name,    
-                            listId: this.props.id
-                        }
-                    }}
-                >
-                    Share
+                    <Link
+                        className='Share_List_Link'
+                        to={{
+                            pathname: '/share-list',
+                            state: {
+                                listName: this.props.name,
+                                listId: this.props.id
+                            }
+                        }}
+                    >
+                        Share
                 </Link>
+
+                </div>
 
             </li>
         )

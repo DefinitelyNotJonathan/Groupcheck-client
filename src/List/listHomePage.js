@@ -36,7 +36,6 @@ fetch(`${config.API_ENDPOINT}/api/lists/`, {
 // I use the above then and if to check for session, could I just combine this into one, and erase
 // this next fetch by using "else" ?
 fetch(`${config.API_ENDPOINT}/api/lists/` ,{
-      method: 'GET',
       credentials: 'include'
     })
     .then(res => res.json())
@@ -46,7 +45,7 @@ fetch(`${config.API_ENDPOINT}/api/lists/` ,{
       this.context.setLists(data)
     })
 
-    fetch(`${config.API_ENDPOINT}/lists/shared` ,{
+    fetch(`${config.API_ENDPOINT}/api/lists/shared` ,{
       method: 'GET',
       credentials: 'include'
     })
@@ -74,20 +73,22 @@ fetch(`${config.API_ENDPOINT}/api/lists/` ,{
         //   // console.log(list.id)
         // })
         return (
-            <div className='ListHomePage'>
-              <h2>Your Lists</h2>
-              <ul className='ListHomePage__list'>
+            <div className='ListHomePage_container'>
+              <Link to='/add-list' className='ListHomePage_addlist'>+</Link>
+              <h2 className='ListHomePage_h2'>Your Lists</h2>
+              <ul className='ListHomePage__list_ul'>
                 {
                 lists.map( list => (
                     <List 
                         key= {list.id}
                         id = {list.id}
                         name = {list.name}
+                        classname='ListHomePage_list'
                     />
                 )) }
               </ul>
               <h2>Lists Shared To You</h2>
-              <ul className = 'ListHomePage__sharedLists'>
+              <ul className = 'ListHomePage__sharedLists__ul'>
                 {
                   sharedLists.map(list => (
                     <List 
@@ -99,7 +100,6 @@ fetch(`${config.API_ENDPOINT}/api/lists/` ,{
                 }
               </ul>
 
-              <Link to='/add-list'>Add a list</Link>
             </div>
         )
         

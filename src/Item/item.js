@@ -64,7 +64,7 @@ componentDidMount(){
         <div className='Item__priorities'>
           Priority:
             {' '}
-            <span className='Priority'>
+            <span className='Item_Priority'>
               {priority}
             </span>
         </div>

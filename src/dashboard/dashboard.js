@@ -5,9 +5,9 @@ export default class Dashboard extends React.Component {
 
     render() {
         return(
-            <div>
-                <nav>
-                    <h2>Welcome {this.props.name}!</h2>
+            <div className="Dashboard_container">
+                <nav className="Dashboard_nav">
+                    <h2 className="Dashboard_header">Welcome {this.props.name}!</h2>
                 </nav>
             </div>
         )

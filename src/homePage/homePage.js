@@ -25,8 +25,8 @@ export default class HomePage extends React.Component {
 
           //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
 
-      fetch(`${config.API_ENDPOINT}/api/lists/:author/`, {
-        // credentials: 'include'
+      fetch(`${config.API_ENDPOINT}/api/lists/`, {
+        credentials: 'include'
     })
       .then (data => {
         if (data.status !== 204) {
@@ -39,9 +39,10 @@ export default class HomePage extends React.Component {
     render() {
         console.log('homepage and user is ' + this.context.user.firstname);
         return (
-            <div className="Homepage-Container">
-                <Dashboard name={this.context.user.firstname}></Dashboard>
+            <div className="Homepage_Container">
+                <Dashboard name={this.context.user.firstname} className="Homepage_DashboardComp"></Dashboard>
                 <ListHomePage 
+                    className="Homepage_ListHomePageComp"
                 ></ListHomePage>
             </div>
 

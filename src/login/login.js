@@ -88,21 +88,21 @@ export default class Login extends React.Component {
     }
     render() {
         return(
-            <div className="Login-Container">
+            <div className="Login_container">
             <form action=""
                 onSubmit={this.handleSubmit}
+                className="Login_form"
                 >
-                 <h2>Login</h2>
-                 <label htmlFor="email">Email</label>
-                 <input type="text" id="email" name="email" value={this.state.email} onChange={this.handleEmail}></input>
-                 <label htmlFor="password">Password</label>
-                 <input type="password" id="password" name="password" value={this.state.p_word} onChange={this.handlePassword}></input>
+                 <label htmlFor="email" className="Login_label">Email</label>
+                 <input type="text" id="email" name="email" value={this.state.email} onChange={this.handleEmail} className="Login_input"></input>
+                 <label htmlFor="password" className="Login_label">Password</label>
+                 <input type="password" id="password" name="password" value={this.state.p_word} onChange={this.handlePassword} className="Login_input" ></input>
 
-                 <div>
-                     <button type="submit" >submit</button>
+                 <div className="Login_buttoncontainer">
+                     <button type="submit" className="Login_button" >Sign In</button>
                  </div>
-                 <Link to="/signup">Sign Up</Link>
              </form>
+             <Link to="/signup" className="Login_signup">Create an account</Link>
          </div>
 
         )

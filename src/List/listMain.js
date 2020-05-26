@@ -74,11 +74,11 @@ class ListMain extends React.Component {
     console.log('LISTNAVPROP IN RENDER')
     console.log(this.listNavProp)
     return (
-      <section className='ItemListMain'>
+      <section className='ListMain_itemlistcontainer'>
         <ListMainNav listName = {this.listNavProp} />
-        <ul>
+        <ul className="ListMain_itemlist">
           {items.map(item => 
-            <li key={item.id}>
+            <li key={item.id} className="ListMain_item">
               <Item
                 id={item.id}
                 list_id={item.list_id}
