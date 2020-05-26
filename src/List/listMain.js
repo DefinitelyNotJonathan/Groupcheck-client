@@ -64,9 +64,9 @@ class ListMain extends React.Component {
 }
 
   render() {
-    // if(this.state.toLogin===true){
-    //   return <Redirect to='/login'/>
-    // }
+    if(this.state.toLogin===true){
+      return <Redirect to='/login'/>
+    }
     console.log(this.context)
     let items = this.context.items
     console.log('CONTEXT ITEMS')

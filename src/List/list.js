@@ -76,7 +76,7 @@ class List extends React.Component {
                         }}
                     >
                         Share
-                </Link>
+                    </Link>
 
                 </div>
 

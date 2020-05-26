@@ -63,9 +63,9 @@ fetch(`${config.API_ENDPOINT}/api/lists/` ,{
     render(){
       console.log('THIS.STATE.TOLOGIN FROM LISTHOMEPAGE')
       console.log(this.state.toLogin)
-      // if(this.state.toLogin===true){
-      //   return <Redirect to='/login'/>
-      // }
+      if(this.state.toLogin===true){
+        return <Redirect to='/login'/>
+      }
       let lists = this.context.lists
       let sharedLists = this.context.sharedLists
         console.log('this.context.lists: ')

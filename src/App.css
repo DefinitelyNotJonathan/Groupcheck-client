@@ -79,18 +79,22 @@ form {
     border-style:solid;
     border-color:black;
     border-width:1px;
+    text-align:right;
 }
 .ListHomePage__List-link {
     display:inline-block;
     border-style:solid;
     border-color:black;
     border-width:1px;
+    text-align:center;
 }
 .List_Buttons_Container{
-    display:inline;
+    display:inline-block;
     border-style:solid;
-    border-color:black;
+    border-color:blue;
     border-width:1px;
+    text-align:center;
+    margin-left:auto;
 }
 .List__delete {
     display:block;
@@ -130,13 +134,21 @@ form {
     border-color: blue;
     border-width: 2px;
 }
-.ListHomePage_h2{
+.ListHomePage_h2 {
     border-style: solid;
     border-color: blue;
     border-width: 2px;
     display:block;
     padding:0px;
     margin:0px;
+}
+.ListHomePage__list_ul {
+    display:block;
+    padding:0;
+}
+.ListHomePage__sharedLists__ul {
+    display:block;
+    padding:0;
 }
 .ListMain_itemlistcontainer {
     border-style: solid;
@@ -299,25 +311,48 @@ form {
 /*share>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 .ShareList_container {
+    border-style:solid;
+    border-color:red;
+    border-width:1px;
 
 }
 .ShareList_header {
-
+    border-style:solid;
+    border-color:blue;
+    border-width:1px;
+    display:block;
+    text-align:center;
 }
 .ShareList_form {
+    border-style:solid;
+    border-color:red;
+    border-width:1px;
 
+}
+.ShareList_input_container {
+    text-align:center;
+    margin-top:3%;
 }
 .ShareList_label {
-
+    margin-right:3%;
 }
 .ShareList_input {
-
+    
 }
 .ShareList_content {
+    border-style:solid;
+    border-color:red;
+    border-width:1px;
+    text-align:center;
 
 }
 .ShareList_button {
-
+    border-style:solid;
+    border-width:1px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:3%;
 }
 .ShareList_cancel_button {
 

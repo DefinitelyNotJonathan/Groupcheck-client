@@ -102,17 +102,19 @@ export default class ShareList extends React.Component {
     }
 
     render() {
-        // if (this.state.toLogin === true) {
-        //     return <Redirect to='/login' />
-        // }
+        if (this.state.toLogin === true) {
+            return <Redirect to='/login' />
+        }
         return (
             <div className="ShareList_container">
                 <h2 className="ShareList_header">Share your list with a friend!</h2>
                 <form action=""
                     onSubmit={this.handleSubmit}
                     className="ShareList_form">
-                    <label htmlFor="email" className="ShareList_label">Email</label>
-                    <input type="text" id="email" name="email" value={this.state.email} onChange={this.handleEmail} className="ShareList_input"></input>
+                    <div className="ShareList_input_container">
+                        <label htmlFor="email" className="ShareList_label" >Share to</label>
+                        <input type="text" id="email" name="email" value={this.state.email} onChange={this.handleEmail} className="ShareList_input" placeholder="email@domain.com"></input>
+                    </div>
                     <p className="ShareList_content">
                         Sharing is simple! Enter the email of a user you wish to share your list with, and submit!
                     </p>

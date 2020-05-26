@@ -62,9 +62,9 @@ class AddList extends React.Component {
             })
     }
     render() {
-        // if (this.state.toLogin === true) {
-        //     return <Redirect to='/login' />
-        // }
+        if (this.state.toLogin === true) {
+            return <Redirect to='/login' />
+        }
         return (
             <div classname='AddList_container'>
                 <button role='link'
