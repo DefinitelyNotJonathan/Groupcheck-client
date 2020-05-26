@@ -113,21 +113,21 @@ form {
 
 .Homepage_Container {
     border-style: solid;
-    border-color: red;
+    border-color:black;
     border-width: 3px;
+    border-radius: 4%;
+    max-width:80%;
+    margin-left:auto;
+    margin-right:auto;
 }
 .Dashboard_container {
-    border-style: solid;
-    border-color: blue;
-    border-width: 2px;
+
     display:block;
     text-align:center;
     height:auto;
 }
 .ListHomePage_container {
-    border-style: solid;
-    border-color: green;
-    border-width: 2px;
+
 }
 .ListMainNav_container {
     border-style: solid;
@@ -135,12 +135,10 @@ form {
     border-width: 2px;
 }
 .ListHomePage_h2 {
-    border-style: solid;
-    border-color: blue;
-    border-width: 2px;
+
     display:inline-block;
     padding:0px;
-    margin:0px;
+    margin:3%;
 }
 .ListHomePage__list_ul {
     display:block;
@@ -152,18 +150,20 @@ form {
 }
 .ListMain_itemlistcontainer {
     border-style: solid;
-    border-color: red;
+    border-color: black;
     border-width: 2px;
 }
 /*would like to make circular*/
 .ListHomePage_addlist{
     font-size:25px;
+    height:40px;
+    width:40px;
     border-radius:50%;
     border-style:solid;
     border-color:black;
     border-width:1px;
     display:inline-block;
-    margin-left:62%;
+    margin-left:46%;
     padding:0px;
     
 }
