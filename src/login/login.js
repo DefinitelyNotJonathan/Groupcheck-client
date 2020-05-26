@@ -41,6 +41,8 @@ export default class Login extends React.Component {
     }  
     handleSubmit(e){
       console.log('handleSubmit()');
+      console.log('E')
+      console.log(e)
         e.preventDefault();
         const data = this.state;
         console.log(data)
@@ -90,13 +92,13 @@ export default class Login extends React.Component {
         return(
             <div className="Login_container">
             <form action=""
-                onSubmit={this.handleSubmit}
+                onSubmit={(e) => this.handleSubmit(e)}
                 className="Login_form"
                 >
                  <label htmlFor="email" className="Login_label">Email</label>
-                 <input type="text" id="email" name="email" value={this.state.email} onChange={this.handleEmail} className="Login_input"></input>
+                 <input type="text" id="email" name="email" value={this.state.email} onChange={(e)=> this.handleEmail(e)} className="Login_input"></input>
                  <label htmlFor="password" className="Login_label">Password</label>
-                 <input type="password" id="password" name="password" value={this.state.p_word} onChange={this.handlePassword} className="Login_input" ></input>
+                 <input type="password" id="password" name="password" value={this.state.p_word} onChange={(e) => this.handlePassword(e)} className="Login_input" ></input>
 
                  <div className="Login_buttoncontainer">
                      <button type="submit" className="Login_button" >Sign In</button>

@@ -109,9 +109,9 @@ class AddItem extends React.Component {
     // }
 
     render() {
-        if (this.state.toLogin === true) {
-            return <Redirect to='/login' />
-        }
+        // if (this.state.toLogin === true) {
+        //     return <Redirect to='/login' />
+        // }
         const lists = this.context.lists;
         return (
             <div className="AddItem_container">

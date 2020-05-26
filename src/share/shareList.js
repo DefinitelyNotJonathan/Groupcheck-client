@@ -102,9 +102,9 @@ export default class ShareList extends React.Component {
     }
 
     render() {
-        if (this.state.toLogin === true) {
-            return <Redirect to='/login' />
-        }
+        // if (this.state.toLogin === true) {
+        //     return <Redirect to='/login' />
+        // }
         return (
             <div className="ShareList_container">
                 <h2 className="ShareList_header">Share your list with a friend!</h2>

@@ -33,6 +33,8 @@ fetch(`${config.API_ENDPOINT}/api/lists/`, {
           })
         }
       })
+      console.log('THIS.STATE.TOLOGIN')
+      console.log(this.state.toLogin)
 // I use the above then and if to check for session, could I just combine this into one, and erase
 // this next fetch by using "else" ?
 fetch(`${config.API_ENDPOINT}/api/lists/` ,{
@@ -44,6 +46,7 @@ fetch(`${config.API_ENDPOINT}/api/lists/` ,{
       console.log(data)
       this.context.setLists(data)
     })
+    .catch(console.log)
 
     fetch(`${config.API_ENDPOINT}/api/lists/shared` ,{
       method: 'GET',
@@ -55,12 +58,14 @@ fetch(`${config.API_ENDPOINT}/api/lists/` ,{
       console.log(data)
       this.context.setSharedLists(data)
     })
+    .catch(console.log)
   }
     render(){
-
-      if(this.state.toLogin===true){
-        return <Redirect to='/login'/>
-      }
+      console.log('THIS.STATE.TOLOGIN FROM LISTHOMEPAGE')
+      console.log(this.state.toLogin)
+      // if(this.state.toLogin===true){
+      //   return <Redirect to='/login'/>
+      // }
       let lists = this.context.lists
       let sharedLists = this.context.sharedLists
         console.log('this.context.lists: ')
