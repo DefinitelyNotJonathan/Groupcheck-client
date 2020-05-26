@@ -79,14 +79,17 @@ form {
     border-style:solid;
     border-color:black;
     border-width:1px;
+    max-width:90%;
     text-align:right;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:2%;
 }
 .ListHomePage__List-link {
     display:inline-block;
-    border-style:solid;
-    border-color:black;
-    border-width:1px;
     text-align:center;
+    padding-left:.75rem;
+    padding-top:.5rem;
 }
 .List_Buttons_Container{
     display:inline-block;
@@ -135,7 +138,11 @@ form {
     border-width: 2px;
 }
 .ListHomePage_h2 {
-
+    display:inline-block;
+    padding:0px;
+    margin:3%;
+}
+.ListHomePage_shared_lists_h2 {
     display:inline-block;
     padding:0px;
     margin:3%;

@@ -96,7 +96,7 @@ fetch(`${config.API_ENDPOINT}/api/lists/` ,{
                     />
                 )) }
               </ul>
-              <h2>Lists Shared To You</h2>
+              <h2 className="ListHomePage_shared_lists_h2">Lists Shared To You</h2>
               <ul className = 'ListHomePage__sharedLists__ul'>
                 {
                   sharedLists.map(list => (
