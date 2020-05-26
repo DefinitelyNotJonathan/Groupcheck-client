@@ -75,7 +75,7 @@ form {
 /*List unit for homepage>>>>>>>>>>>>>>>>>>*/
 
 .List{
-    display:block;
+    display:flex;
     border-style:solid;
     border-color:black;
     border-width:1px;
@@ -138,7 +138,7 @@ form {
     border-style: solid;
     border-color: blue;
     border-width: 2px;
-    display:block;
+    display:inline-block;
     padding:0px;
     margin:0px;
 }
@@ -157,13 +157,13 @@ form {
 }
 /*would like to make circular*/
 .ListHomePage_addlist{
-    font-size:35px;
-    border-radius:20%;
+    font-size:25px;
+    border-radius:50%;
     border-style:solid;
     border-color:black;
     border-width:1px;
-    display:inline;
-    margin-left:70%;
+    display:inline-block;
+    margin-left:62%;
     padding:0px;
     
 }

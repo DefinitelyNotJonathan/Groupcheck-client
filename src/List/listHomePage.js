@@ -79,8 +79,8 @@ fetch(`${config.API_ENDPOINT}/api/lists/` ,{
         // })
         return (
             <div className='ListHomePage_container'>
-              <Link to='/add-list' className='ListHomePage_addlist'>+</Link>
               <h2 className='ListHomePage_h2'>Your Lists</h2>
+              <Link to='/add-list' className='ListHomePage_addlist'>+</Link>
               <ul className='ListHomePage__list_ul'>
                 {
                 lists.map( list => (
