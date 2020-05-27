@@ -56,6 +56,44 @@ form {
     max-height:10%;
 }
 
+/*Sign Up>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.SignUp_container {
+    display: inline-block;
+    min-width:100%
+}
+.SignUp_header {
+    text-align:center;
+}
+.SignUp_form {
+    border-style: solid;
+    border-color:black;
+    border-width: 2px;
+    max-height:30%;
+    max-width:70%;
+}
+.SignUp_label {
+    margin:0.35rem 0.5rem;
+    display:block;
+    max-height:5%;
+}
+.SignUp_input {
+    display:block;
+    width:100%;
+    min-height:35px;
+}
+.SignUp_button_container {
+    display:block;
+    text-align: center;
+    max-height:23%;
+    margin-top:3%;
+}
+.SignUp_button {
+    text-align: center;
+    height:1.75rem;
+    margin-bottom:.5rem;
+}
+
 /*List unit for homepage>>>>>>>>>>>>>>>>>>*/
 
 .List{
@@ -349,23 +387,6 @@ form {
 
 }
 
-/*Sign Up>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-
-.SignUp_container {
-
-}
-.SignUp_form {
-
-}
-.SignUp_label {
-
-}
-.SignUp_input {
-
-}
-.SignUp_button {
-
-}
 
 @media screen and (min-width:768px) {
 
