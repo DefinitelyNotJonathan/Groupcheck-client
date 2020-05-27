@@ -15,58 +15,42 @@ form {
 /*Login>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 .Login_container {
-    border-style: solid;
-    border-color: blue;
-    border-width: 2px;
     display: inline-block;
     min-width:100%
 }
 .Login_form {
     border-style: solid;
-    border-color: red;
+    border-color:black;
     border-width: 2px;
     max-height:30%;
     max-width:70%;
 }
 .Login_header {
-    border-style: solid;
-    border-color: yellow;
-    border-width: 2px;
+
 }
+/*I would like to make a similar input field color to background color*/
 .Login_label {
-    border-style: solid;
-    border-color: green;
-    border-width: 2px;
+    margin:0.35rem 0.5rem;
     display:block;
     max-height:5%;
 }
 .Login_input {
-    border-style: solid;
-    border-color: purple;
-    border-width: 2px;
     display:block;
     width:100%;
     min-height:35px;
 }
 .Login_buttoncontainer {
-    border-style: solid;
-    border-color: orangered;
-    border-width: 2px;
     display:block;
     text-align: center;
     max-height:23%;
     margin-top:3%;
 }
 .Login_button {
-    border-style: solid;
-    border-color: palevioletred;
-    border-width: 2px;
     text-align: center;
+    height:1.75rem;
+    margin-bottom:.5rem;
 }
 .Login_signup {
-    border-style: solid;
-    border-color: brown;
-    border-width: 2px;
     display: block;
     text-align:center;
     max-height:10%;
