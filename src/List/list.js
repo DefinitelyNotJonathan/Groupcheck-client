@@ -65,6 +65,15 @@ class List extends React.Component {
                         {' '}
                   remove
                 </button>
+                {/* <button role='link'
+                    onClick={() => {
+                        //need to create everything surrounding context if I'm going to use this feature as a button instead of the link
+                        this.context.addlistinfo
+                        this.props.history.goBack()
+                    }}
+                    className='AddItem_cancel-button'>
+                    Cancel
+            </button> */}
                     <Link
                         className='Share_List_Link'
                         to={{

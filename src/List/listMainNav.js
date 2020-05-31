@@ -9,7 +9,11 @@ export default class ListMainNav extends React.Component {
             <div className='ListMainNav_container'>
                 <nav className='ListMainNav_navbar'>
                 <h2 className='ListMainNav_header'>{this.props.listName}</h2>
-                <Link to="/add-item" className="ListMainNav_additem">Add an item</Link>
+                <button role='link'
+                    onClick={() => this.props.history.push('/add-item')}
+                    className='ListMainNav_additem'>
+                    +
+              </button>
                 </nav>
                 <Link to="/">Back</Link>
             </div>

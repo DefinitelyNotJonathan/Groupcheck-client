@@ -131,16 +131,6 @@ class AddItem extends React.Component {
                         <option value="3">3</option>
                     </select>
                     
-                    <select name="listId" id="AddItem_listselector" /*think I'd like to remove this*/ >
-                    
-                        {lists.map((list) => {
-                            return (
-                                <option key={list.id} value={list.id}>
-                                    {list.name}
-                                </option>
-                            )
-                        })}
-                    </select>
                     <button className="AddItem_button">Create Note</button>
                 </form>
                 <button role='link'

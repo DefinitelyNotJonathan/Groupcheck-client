@@ -66,7 +66,7 @@ class AddList extends React.Component {
             return <Redirect to='/login' />
         }
         return (
-            <div classname='AddList_container'>
+            <div className='AddList_container'>
                 <button role='link'
                     onClick={() => this.props.history.goBack()}
                     className='AddList_cancel-button'
@@ -75,7 +75,7 @@ class AddList extends React.Component {
                 </button>
                 <form onSubmit={this.handleSubmit} className="AddList_form">
                     {/* <label htmlFor='nameInput' className="AddList_label">list name*</label> */}
-                    <input id='nameInput' type="text" name="listName" placeholder="           New List Name" className="AddList_input"></input>
+                    <input id='nameInput' type="text" name="listName" placeholder="New List Name" className="AddList_input"></input>
                     <button type="submit" className="AddList_button">Create List</button>
                 </form>
 

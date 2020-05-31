@@ -59,7 +59,7 @@ export default class SignUp extends React.Component {
                     <label htmlFor="email" className="SignUp_label">Email*</label>
                     <input type="text" id="email" name="email" className="SignUp_input"></input>
                     <label htmlFor="p_word" id="p_word" name="p_word" className="SignUp_label">Password*</label>
-                    <input type="text" id="p_word" name="p_word" className="SignUp_input"></input>
+                    <input type="password" id="p_word" name="p_word" className="SignUp_input"></input>
                     <div className="SignUp_button_container">
                         <button id="signup" name="signup" className="SignUp_button" >Sign Up!</button>
                     </div>

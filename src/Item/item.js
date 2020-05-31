@@ -61,19 +61,6 @@ componentDidMount(){
         <h2 className='Item__title'>
          {name}
         </h2>
-        <div className='Item__priorities'>
-          Priority:
-            {' '}
-            <span className='Item_Priority'>
-              {priority}
-            </span>
-        </div>
-        <div className='Item__content'>
-            Content:
-            <div className='Content'>
-                {content}
-            </div>
-        </div>
         <button
           className='Item__delete'
           type='button'
@@ -82,6 +69,18 @@ componentDidMount(){
           {' '}
           remove
         </button>
+        <div className='Item__priorities'>
+          Priority:
+            {' '}
+            <span className='Item_Priority'>
+              {priority}
+            </span>
+        </div>
+        <div className='Item__content'>
+            <p className='Content'>
+                {content}
+            </p>
+        </div>
       </div>
     )
   }
