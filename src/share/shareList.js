@@ -108,6 +108,13 @@ export default class ShareList extends React.Component {
         return (
             <div className="ShareList_container">
                 <h2 className="ShareList_header">Share your list with a friend!</h2>
+                <button role='link'
+                    onClick={() => this.props.history.goBack()}
+                    className='ShareList_cancel_button'
+                >
+                    Cancel
+                </button>
+
                 <form action=""
                     onSubmit={this.handleSubmit}
                     className="ShareList_form">
@@ -120,13 +127,6 @@ export default class ShareList extends React.Component {
                     </p>
                     <button type="submit" className="ShareList_button">Submit</button>
                 </form>
-                <button role='link'
-                    onClick={() => this.props.history.goBack()}
-                    className='ShareList_cancel_button'
-                >
-                    Cancel
-                 </button>
-
             </div>
         )
 

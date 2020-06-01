@@ -115,6 +115,12 @@ class AddItem extends React.Component {
         const lists = this.context.lists;
         return (
             <div className="AddItem_container">
+                <button role='link'
+                    onClick={() => this.props.history.goBack()}
+                    className='AddItem_cancel-button'>
+                    Cancel
+                </button>
+
                 <form onSubmit={this.handleSubmit} className="AddItem_form">
 
                     <label htmlFor='nameInput' className="AddItem_label">item name*</label>
@@ -122,7 +128,7 @@ class AddItem extends React.Component {
                     <label htmlFor='contentInput' className="AddItem_label">item content*</label>
                     <textarea id='contentInput' type="text" name="itemContent" className="AddItem_textarea"></textarea>
                     <label htmlFor="itemPriority" className="AddItem_label">Priority*</label>
-                    
+
                     <select name="itemPriority" id="AddItem_priority"
                     >
                         <option value=""></option>
@@ -130,14 +136,9 @@ class AddItem extends React.Component {
                         <option value="2">2</option>
                         <option value="3">3</option>
                     </select>
-                    
+
                     <button className="AddItem_button">Create Note</button>
                 </form>
-                <button role='link'
-                    onClick={() => this.props.history.goBack()}
-                    className='AddItem_cancel-button'>
-                    Cancel
-            </button>
             </div>
 
 

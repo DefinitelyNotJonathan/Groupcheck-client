@@ -58,17 +58,19 @@ componentDidMount(){
     const { name, content, priority } = this.props
     return (
       <div className='Item'>
-        <h2 className='Item__title'>
-         {name}
-        </h2>
-        <button
-          className='Item__delete'
-          type='button'
-          onClick={this.handleClickDelete}
-        >
-          {' '}
-          remove
-        </button>
+        <div className='Item_top_container'>
+          <h2 className='Item__title'>
+          {name}
+          </h2>
+          <button
+            className='Item__delete'
+            type='button'
+            onClick={this.handleClickDelete}
+          >
+            {' '}
+            remove
+          </button>
+        </div>
         <div className='Item__priorities'>
           Priority:
             {' '}

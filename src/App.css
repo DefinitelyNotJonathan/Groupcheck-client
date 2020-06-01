@@ -15,9 +15,13 @@ html {
 form {
     margin-left:auto;
     margin-right:auto;
+    max-width:80%;
     width:80%;
     background-color: rgba(191, 203, 211, 0.904);
     border-radius:6px;
+}
+label {
+    font-weight:bold;
 }
 
 /*Login>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
@@ -28,8 +32,8 @@ form {
 }
 .Login_form {
     border-style: solid;
-    border-color:black;
-    border-width: 2px;
+    border-color: rgba(210, 221, 228, 0.904);
+    border-width: 3px;
     max-height:30%;
     max-width:70%;
 }
@@ -46,17 +50,27 @@ form {
     display:block;
     width:100%;
     min-height:35px;
+    border-width:1px;
+    border-radius:4px;
+    border-color: rgba(210, 221, 228, 0.904);
+
 }
 .Login_buttoncontainer {
     display:block;
     text-align: center;
     max-height:23%;
     margin-top:3%;
+    
 }
 .Login_button {
     text-align: center;
     height:1.75rem;
+    width:30%;
     margin-bottom:.5rem;
+    border-width:1px;
+    border-color: rgba(210, 221, 228, 0.904);
+    border-radius:4px;
+
 }
 .Login_signup {
     display: block;
@@ -75,8 +89,8 @@ form {
 }
 .SignUp_form {
     border-style: solid;
-    border-color:black;
-    border-width: 2px;
+    border-color: rgba(210, 221, 228, 0.904);
+    border-width: 3px;
     max-height:30%;
     max-width:70%;
 }
@@ -89,6 +103,11 @@ form {
     display:block;
     width:100%;
     min-height:35px;
+    border-width:1px;
+    border-radius:4px;
+
+    border-color: rgba(210, 221, 228, 0.904);
+
 }
 .SignUp_button_container {
     display:block;
@@ -100,6 +119,10 @@ form {
     text-align: center;
     height:1.75rem;
     margin-bottom:.5rem;
+    border-width:1px;
+    border-radius:4px;
+    border-color: rgba(210, 221, 228, 0.904);
+
 }
 
 /*List unit for homepage>>>>>>>>>>>>>>>>>>*/
@@ -107,46 +130,50 @@ form {
 .List{
     display:flex;
     border-style:solid;
-    border-color:black;
-    border-width:1px;
-    border-radius:4%;
+    border-color: rgba(210, 221, 228, 0.904);
+    border-width:2px;
+    border-radius:4px;
     max-width:90%;
     text-align:right;
     margin-left:auto;
     margin-right:auto;
     margin-bottom:2%;
     background-color: rgba(240, 240, 240, 0.993);
-
 }
 .ListHomePage__List-link {
-    display:inline-block;
-    text-align:center;
-    padding-left:.75rem;
-    padding-top:.5rem;
+    box-sizing:border-box;
+    display:inline-flex;
+    text-align:left;
+    min-width:200px;
+    margin:0;
+    padding:0;
+    text-decoration:none;
+    color:black;
 }
 .List_Buttons_Container{
     display:inline-block;
     text-align:center;
-    margin-left:auto;
 }
 .List__delete {
     display:block;
     border-style:solid;
-    border-color:black;
-    border-width:1px;
+    border-color: rgba(210, 221, 228, 0.904);
+    border-width:2px;
 }
 .Share_List_Link {
     display:block;
     border-style:solid;
-    border-color:black;
-    border-width:1px;
+    border-color: rgba(210, 221, 228, 0.904);
+    border-width:2px;
+    text-decoration:none;
+    color:black;
 }
 
 /*homepage>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 .Homepage_Container {
     border-style: solid;
-    border-color:black;
+    border-color: rgba(210, 221, 228, 0.904);
     border-width: 3px;
     border-radius: 4%;
     max-width:80%;
@@ -166,7 +193,7 @@ form {
 }
 .ListMainNav_container {
     border-style: solid;
-    border-color: blue;
+    border-color: rgba(210, 221, 228, 0.904);
     border-width: 2px;
 }
 .ListHomePage_h2 {
@@ -189,7 +216,7 @@ form {
 }
 .ListMain_itemlistcontainer {
     border-style: solid;
-    border-color: black;
+    border-color: rgba(210, 221, 228, 0.904);
     border-width: 2px;
 }
 /*would like to make circular*/
@@ -199,10 +226,11 @@ form {
     width:40px;
     border-radius:50%;
     border-style:solid;
-    border-color:black;
-    border-width:1px;
-    display:inline-block;
-    margin-left:46%;
+    border-color: rgba(210, 221, 228, 0.904);
+    border-width:2px;
+    /* display:inline-block; */
+    float:right;
+    margin-right:10%;
     padding:0px;
     
 }
@@ -213,6 +241,7 @@ form {
     max-width:80%;
     margin-left:auto;
     margin-right:auto;
+    border: none;
 }
 .ListMain_itemlist {
     list-style:none;
@@ -222,37 +251,66 @@ form {
     display:block;
 }
 .ListMainNav_container {
+    border-style:solid;
+    border-color: rgba(210, 221, 228, 0.904);
+    border-width:2px;
+    border-radius:8px;
+    background-color: rgba(191, 203, 211, 0.904);
+
 
 }
 .ListMainNav_navbar {
+    text-align:center;
+    text-transform:capitalize;
 
 }
 .ListMainNav_header {
-    display:block;
-    text-align:center;
+    display:inline-block;
+
 }
 .ListMainNav_additem {
-
+    float:right;
+    margin:1rem;
+    margin-top:1.5rem;
+}
+.ListMainNav_back {
+    float:left;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    border-style:solid;
+    border-color: rgba(210, 221, 228, 0.904);
 }
 
 /*Item Unit for List Main >>>>>>>>>>>>>>>>>>>>*/
 .Item {
     display:block;
     border-style:solid;
-    border-color:black;
-    border-width:1px;
+    border-color: rgba(210, 221, 228, 0.904);
+    border-width:2px;
+    border-radius:8px;
+    background-color: rgba(191, 203, 211, 0.904);
+    margin-bottom: .5rem;
+}
+.Item_top_container {
+    display:block;
+    overflow:hidden;
 }
 .Item__title {
-    display:flex;
-    text-align:center;
-    margin:.5rem 0;
+    display:block;
+    float:left;
+    margin:.5rem;
+    text-transform:capitalize;
+
 }
 .Item__priorities {
-    display:block;
-    text-align:center;
+    display:inline-block;
+    text-align:left;
+    margin: 0 .75rem;
+    font-weight:bold;
 }
 .Item_Priority {
-
+    display:inline-block;
 }
 .Item__content {
     display:block;
@@ -262,7 +320,11 @@ form {
 
 }
 .Item__delete {
-    display:flex;
+    display:block;
+    float:right;
+    height:1.75rem;
+    margin:.5rem;
+    margin-top:1rem;
 }
 
 /*Add List >>>>>>>>>>>>>>>>>>>>*/
@@ -273,6 +335,10 @@ form {
     text-align:center;
 }
 .AddList_form {
+    border-style:solid;
+    border-width:2px;
+    border-color: rgba(210, 221, 228, 0.904);
+    border-radius:4px;
     display:block;
     width: 80%;
     overflow:auto;
@@ -286,6 +352,11 @@ form {
     margin-top:1.5rem;
     margin-bottom:5%;
     text-align:center;
+    border-width:1px;
+    border-radius:4px;
+
+    border-color: rgba(210, 221, 228, 0.904);
+
 
 }
 .AddList_button {
@@ -295,6 +366,10 @@ form {
     margin-bottom:.75rem;
     height:1.75rem;
     width:30%;
+    border-width:1px;
+    border-radius:4px;
+    border-color: rgba(210, 221, 228, 0.904);
+
 
 
 }
@@ -309,29 +384,46 @@ form {
 
 }
 .AddItem_form {
+    border-style:solid;
+    border-width:2px;
+    border-color: rgba(210, 221, 228, 0.904);
     padding-bottom:3%;
-    width:60%;
+    width:80%;
 }
 .AddItem_label {
     display:block;
     padding-top:3%;
     padding-bottom:3%;
     padding-left:3%;
+    font-weight:bold;
+    text-transform:capitalize;
+
 }
 .AddItem_input {
     display:block;
+    width:100%;
+    min-height:35px;
     margin-left:auto;
     margin-right:auto;
-    width:100%;
-    height:1.5rem;
-    padding-bottom:3%;
+    margin-top:.5rem;
+    margin-bottom:.5rem;
+    text-align:center;
+    border-width:1px;
+    border-radius:4px;
+    border-color: rgba(210, 221, 228, 0.904);
+
+
 }
 .AddItem_textarea {
     display:block;
     margin-left:auto;
     margin-right:auto;
-    min-width:65%;
-    padding-bottom:7%;
+    min-width:75%;
+    padding-bottom:10%;
+    border-width:1px;
+    border-radius:4px;
+    border-color: rgba(210, 221, 228, 0.904);
+
 }
 #AddItem_priority {
     display:block;
@@ -343,6 +435,10 @@ form {
     margin-right:auto;
     margin-bottom:3%;
     height:1.75rem;
+    border-width:1px;
+    border-radius:4px;
+    border-color: rgba(210, 221, 228, 0.904);
+
 }
 
 /*share>>>>>>>>>>>>>>>>>>>>>>>>>>*/
@@ -356,7 +452,7 @@ form {
 }
 .ShareList_form {
     border-style:solid;
-    border-color:black;
+    border-color: rgba(210, 221, 228, 0.904);
     border-width:2px;
     max-width:80%;
     text-align:center;
@@ -373,14 +469,18 @@ form {
     display:block;
     padding-top:.5rem;
     margin-right:3%;
+    font-weight:bold;
 }
 .ShareList_input {
+    
+    border-radius:4px;
     text-align:center;
     display:block;
-    width:60%;
-    height:1.5rem;
+    width:100%;
+    min-height:35px;
     margin: .5rem auto 0 auto;
-
+    border-width:1px;
+    border-color: rgba(210, 221, 228, 0.904);
 }
 .ShareList_content {
     text-align:center;
@@ -392,20 +492,68 @@ form {
     margin-left:auto;
     margin-right:auto;
     margin-bottom:3%;
+    height:1.75rem;
+    width:30%;
+    border-width:1px;
+    border-color: rgba(210, 221, 228, 0.904);
+
+
 }
 .ShareList_cancel_button {
 
 }
 
-
+@media screen and (min-width:640px) {
+    .App__header {
+        font-size:24px;
+    }
+    .ListHomePage__List-link {
+    position:relative;
+    z-index: 1;
+    padding-right:15em;
+    margin-right:auto;
+    }
+    .ListMainNav_header {
+        font-size:32px;
+    }
+    .Item__title {
+        margin-left:1.5rem;
+    }
+    .Item__priorities {
+        margin-left:1.5rem;
+    }
+    .Content {
+        font-size:22px;
+    }
+    .AddItem_label {
+        font-size:22px;
+    }
+    #AddItem_priority {
+        width:3rem;
+    }
+    .ShareList_label {
+        font-size:22px;
+    }
+}
 @media screen and (min-width:768px) {
-
+    .App__header {
+        margin: 5rem 0;
+    }
     form {
-      width:50%;
+      width:80%;
+    }
+    label {
+        font-size:22px;
     }
     button {
-      width:30%;
-      font-size:24px;
+      /* width:30%; */
+      font-size:20px;
+    }
+    .Dashboard_header {
+        font-size:30px;
+    }
+    .ListHomePage__List-link {
+        font-size:22px;
     }
 }
 @media screen and (min-width:1024px) {
