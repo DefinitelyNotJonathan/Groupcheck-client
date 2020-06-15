@@ -80,11 +80,18 @@ fetch(`${config.API_ENDPOINT}/api/lists/` ,{
         return (
             <div className='ListHomePage_container'>
               <h2 className='ListHomePage_h2'>Your Lists</h2>
-              <button role='link'
+              {/* <button role='link'
                     onClick={() => this.props.history.push('/add-list')}
                     className='ListHomePage_addlist'>
                     +
-              </button>
+              </button> */}
+              <Link
+                    // className='ListHomePage_addlist'
+                    className='button'
+                    to="/add-list"
+              >
+                        +
+              </Link>
               <ul className='ListHomePage__list_ul'>
                 {
                 lists.map( list => (

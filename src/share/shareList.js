@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router';
+import { Redirect, Link } from 'react-router-dom';
 import config from '../config';
 
 export default class ShareList extends React.Component {
@@ -108,12 +108,14 @@ export default class ShareList extends React.Component {
         return (
             <div className="ShareList_container">
                 <h2 className="ShareList_header">Share your list with a friend!</h2>
-                <button role='link'
-                    onClick={() => this.props.history.goBack()}
-                    className='ShareList_cancel_button'
-                >
-                    Cancel
-                </button>
+                <Link
+                        className='button back'
+                        to={{
+                            pathname: '/',
+                        }}
+                    >
+                        Back
+                 </Link>
 
                 <form action=""
                     onSubmit={this.handleSubmit}

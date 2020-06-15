@@ -4,17 +4,38 @@ import { Link } from 'react-router-dom';
 
 export default class ListMainNav extends React.Component {
     static contextType = ApiContext;
+
+    constructor(props){
+        super(props)
+        this.state={
+            listName: this.props.listName,
+            listId: []
+        }
+    }
+    componentDidMount(){
+        console.log('CONTEXT CURRENTLIST MAINNAV')
+        console.log(this.context.currentList)
+        this.setState({
+            listId: this.context.currentList
+        })
+    }
     render() {
         return (
             <div className='ListMainNav_container'>
                 <nav className='ListMainNav_navbar'>
-                    <Link className="ListMainNav_back" to="/">Back</Link>
                     <h2 className='ListMainNav_header'>{this.props.listName}</h2>
-                    <button role='link'
-                        onClick={() => this.props.history.push('/add-item')}
-                        className='ListMainNav_additem'>
-                        +
-                    </button>
+                    <Link
+                            className='button'
+                            to={{
+                                pathname: '/add-item',
+                                state: {
+                                    listName: this.props.listName,
+                                    listId: this.context.currentList
+                                }
+                            }}
+                        >
+                            +
+                    </Link>
                 </nav>
             </div>
         )

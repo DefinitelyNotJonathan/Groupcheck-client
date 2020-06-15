@@ -11,8 +11,11 @@ class List extends React.Component {
             listName: this.props.name,
             listId: this.props.id
         }
+        this.handleAddContext = this.handleAddContext.bind(this)
     }
-
+    handleAddContext = (id) => {
+        this.context.setCurrentList(id)
+    }
     handleClickDelete = () => {
         const listId = this.props.id
         const stringListId = String(listId)
@@ -51,7 +54,10 @@ class List extends React.Component {
                     className='ListHomePage__List-link'
                     to={{
                         pathname: `/lists/${id}`,
-                        state: { listName: this.props.name }
+                        state: { 
+                            listName: this.props.name,
+                            listId: this.props.id   
+                        }
                     }}
                 >
                     {this.state.listName}
@@ -63,7 +69,7 @@ class List extends React.Component {
                         onClick={this.handleClickDelete}
                     >
                         {' '}
-                  remove
+                  Remove
                 </button>
                 {/* <button role='link'
                     onClick={() => {
@@ -75,7 +81,7 @@ class List extends React.Component {
                     Cancel
             </button> */}
                     <Link
-                        className='Share_List_Link'
+                        className='button'
                         to={{
                             pathname: '/share-list',
                             state: {

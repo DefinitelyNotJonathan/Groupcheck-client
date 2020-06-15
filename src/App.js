@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import ListMain from './List/listMain';
 import ApiContext from './ApiContext';
-// import STORE from './store';
 import AddList from './List/addList';
 import AddItem from './Item/addItem';
 import ShareList from './share/shareList';
 import ErrorBoundary from './ErrorBoundary';
-// import LandingPage from './landingPage/landingPage';
 import HomePage from './homePage/homePage';
 import Login from './login/login';
 import SignUp from './signUp/signUp';
 import './App.css'
+import LogoutButton from './LogoutButton';
 
 
 class App extends Component {
@@ -40,6 +39,7 @@ class App extends Component {
         <Route path="/add-list" component={AddList} />
         <Route path="/add-item" component={AddItem} />
         <Route path="/share-list" component={ShareList} />
+
 
       </>
     );
@@ -134,7 +134,8 @@ class App extends Component {
           <header className="App__header">
             <h1>
               GroupCheck
-                            </h1>
+            </h1>
+            <Route path="/" component={LogoutButton} />
           </header>
           <ErrorBoundary errorMessage='could not display MainRoutes'>
             <main className="App__main">{this.renderMainRoutes()}

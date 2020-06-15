@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import ApiContext from '../ApiContext'
 import config from '../config'
 
@@ -56,10 +56,10 @@ class AddItem extends React.Component {
             key: e.target.itemName.value,
             name: e.target.itemName.value,
             priority: e.target.itemPriority.value,
-            list_id: e.target.listId.value,
-            user_id: this.context.user.id,
+            list_id: this.context.currentList,
             content: e.target.itemContent.value
         }
+        const stringId = String(data.list_id)
         console.log('handlesubmit, context below')
         console.log(this.context)
         console.log(data)
@@ -73,7 +73,7 @@ class AddItem extends React.Component {
             alert('please complete the required fields');
             return false;
         }
-        fetch(`${config.API_ENDPOINT}/api/items/` + data.list_id, {
+        fetch(`${config.API_ENDPOINT}/api/items/` + stringId, {
             method: 'POST',
             credentials: 'include',
             headers: { "Content-Type": "application/json" },
@@ -112,14 +112,17 @@ class AddItem extends React.Component {
         if (this.state.toLogin === true) {
             return <Redirect to='/login' />
         }
-        const lists = this.context.lists;
+        // const lists = this.context.lists;
         return (
             <div className="AddItem_container">
-                <button role='link'
-                    onClick={() => this.props.history.goBack()}
-                    className='AddItem_cancel-button'>
-                    Cancel
-                </button>
+                <Link
+                        className='button back'
+                        to={{
+                            pathname: '/',
+                        }}
+                    >
+                        Back
+                 </Link>
 
                 <form onSubmit={this.handleSubmit} className="AddItem_form">
 

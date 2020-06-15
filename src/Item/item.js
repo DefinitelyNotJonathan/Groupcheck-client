@@ -68,7 +68,7 @@ componentDidMount(){
             onClick={this.handleClickDelete}
           >
             {' '}
-            remove
+            Remove
           </button>
         </div>
         <div className='Item__priorities'>

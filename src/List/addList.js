@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import ApiContext from '../ApiContext.js'
 import config from '../config'
 
@@ -67,12 +67,15 @@ class AddList extends React.Component {
         }
         return (
             <div className='AddList_container'>
-                <button role='link'
-                    onClick={() => this.props.history.goBack()}
-                    className='AddList_cancel-button'
-                >
-                    Cancel
-                </button>
+                <Link
+                        className='button back'
+                        to={{
+                            pathname: '/'
+                        }}
+                    >
+                        Back
+                 </Link>
+
                 <form onSubmit={this.handleSubmit} className="AddList_form">
                     {/* <label htmlFor='nameInput' className="AddList_label">list name*</label> */}
                     <input id='nameInput' type="text" name="listName" placeholder="New List Name" className="AddList_input"></input>
