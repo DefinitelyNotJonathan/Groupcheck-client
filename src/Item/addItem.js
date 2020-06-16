@@ -47,12 +47,7 @@ class AddItem extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let data =
-        // new ListItem(
-        //     e.target.itemName.value, null, e.target.itemName.value,e.target.itemContent.value,
-        //     e.target.itemPriority.value, e.target.listId.value, this.context.user.id
-        //     )
-        {
+        let data = {
             key: e.target.itemName.value,
             name: e.target.itemName.value,
             priority: e.target.itemPriority.value,
@@ -91,37 +86,19 @@ class AddItem extends React.Component {
             })
     }
 
-    // handleSubmit(e){
-    //     e.preventDefault();
-    //     // console.log('hello')
-    //     console.log(e.target)
-
-    //     const data = new FormData(e.target);
-    //     let sendData = {};
-    //     for (var key of data.entries()) {
-    // 			console.log(key[0] + ', ' + key[1]);
-    //       sendData[key[0]] = key[1];
-    //     }
-    //     console.log('sendData:');
-    //     console.log(sendData);
-    // fetch(`${config.API_ENDPOINT}/items`, {
-
-    // }
-
     render() {
         if (this.state.toLogin === true) {
             return <Redirect to='/login' />
         }
-        // const lists = this.context.lists;
         return (
             <div className="AddItem_container">
                 <Link
-                        className='button back'
-                        to={{
-                            pathname: '/',
-                        }}
-                    >
-                        Back
+                    className='button back'
+                    to={{
+                        pathname: '/',
+                    }}
+                >
+                    Back
                  </Link>
 
                 <form onSubmit={this.handleSubmit} className="AddItem_form">

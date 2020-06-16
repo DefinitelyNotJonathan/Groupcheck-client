@@ -45,7 +45,6 @@ class List extends React.Component {
     }
     render() {
         const id = this.props.id
-        // const name = this.props.name
         console.log('LIST this.state.name')
         console.log(this.state.listName)
         return (
@@ -71,15 +70,6 @@ class List extends React.Component {
                         {' '}
                   Remove
                 </button>
-                {/* <button role='link'
-                    onClick={() => {
-                        //need to create everything surrounding context if I'm going to use this feature as a button instead of the link
-                        this.context.addlistinfo
-                        this.props.history.goBack()
-                    }}
-                    className='AddItem_cancel-button'>
-                    Cancel
-            </button> */}
                     <Link
                         className='button'
                         to={{

@@ -37,7 +37,6 @@ export default class ShareList extends React.Component {
     }
 
     executeTheShare(shareId, listId) {
-        // fetch(`${config.API_ENDPOINT}/`, {
         const shareData = {
             list_id: listId,
             shared_to: shareId
@@ -48,8 +47,6 @@ export default class ShareList extends React.Component {
             body: JSON.stringify(shareData)
         })
             .then(res => {
-                console.log('console logged as res')
-                console.log(res)
                 if (res.ok) {
                     return res.json()
                 } else {
@@ -58,8 +55,6 @@ export default class ShareList extends React.Component {
                 }
             })
             .then(list => {
-                console.log('RESPONSE DATA FROM POST')
-                console.log(list)
                 alert(`${list} was successfully shared!`)
                 this.props.history.push('/');
             })
@@ -70,30 +65,16 @@ export default class ShareList extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log('this.state.email')
-        console.log(this.state.email)
         this.email = this.state.email
         fetch(`${config.API_ENDPOINT}/api/share/${this.email}`, {
             credentials: 'include',
         })
             .then(res => res.json())
             .then(data => {
-                console.log("data from get request")
-                console.log(data)
-                console.log("SHARE RESPONSE DATA ID FROM GET")
-                //I found a workaround by setting the array index to zero (below), but I'm not sure how to unwrap the response object to remove the array around it
-                console.log(data.id)
                 this.setState({
                     shareId: data.id
                 })
-                //I think I may actually need this to be a string?
-                //cant get any if statements to work. data === this.state.email, data.hasOwnProperty("id") or "email", data === String(this.state.email)
                 if (data) {
-
-                    console.log('shareId state set to:')
-                    console.log(this.state.shareId)
-                    console.log('this.state.listId')
-                    console.log(this.state.listId)
                     this.executeTheShare(this.state.shareId, this.state.listId)
                 } else {
                     throw new Error('Something went wrong');
@@ -109,12 +90,12 @@ export default class ShareList extends React.Component {
             <div className="ShareList_container">
                 <h2 className="ShareList_header">Share your list with a friend!</h2>
                 <Link
-                        className='button back'
-                        to={{
-                            pathname: '/',
-                        }}
-                    >
-                        Back
+                    className='button back'
+                    to={{
+                        pathname: '/',
+                    }}
+                >
+                    Back
                  </Link>
 
                 <form action=""

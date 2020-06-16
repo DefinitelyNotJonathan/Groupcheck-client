@@ -5,16 +5,14 @@ import { Link } from 'react-router-dom';
 export default class ListMainNav extends React.Component {
     static contextType = ApiContext;
 
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={
+        this.state = {
             listName: this.props.listName,
             listId: []
         }
     }
-    componentDidMount(){
-        console.log('CONTEXT CURRENTLIST MAINNAV')
-        console.log(this.context.currentList)
+    componentDidMount() {
         this.setState({
             listId: this.context.currentList
         })
@@ -25,16 +23,16 @@ export default class ListMainNav extends React.Component {
                 <nav className='ListMainNav_navbar'>
                     <h2 className='ListMainNav_header'>{this.props.listName}</h2>
                     <Link
-                            className='button'
-                            to={{
-                                pathname: '/add-item',
-                                state: {
-                                    listName: this.props.listName,
-                                    listId: this.context.currentList
-                                }
-                            }}
-                        >
-                            +
+                        className='button'
+                        to={{
+                            pathname: '/add-item',
+                            state: {
+                                listName: this.props.listName,
+                                listId: this.context.currentList
+                            }
+                        }}
+                    >
+                        +
                     </Link>
                 </nav>
             </div>

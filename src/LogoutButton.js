@@ -13,10 +13,10 @@ export default class LogoutButton extends React.Component {
         fetch(`${config.API_ENDPOINT}/api/logout`, {
             credentials: 'include',
         })
-        .then(() => {
-            this.props.history.push('/login')
-        })
-        
+            .then(() => {
+                this.props.history.push('/login')
+            })
+
 
     }
 

@@ -9,24 +9,17 @@ export default class SignUp extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
     handleSubmit(e) {
         e.preventDefault();
-        // console.log('hello')
-        console.log(e.target)
-
         const data = new FormData(e.target);
         let sendData = {};
         for (var key of data.entries()) {
-            console.log(key[0] + ', ' + key[1]);
             sendData[key[0]] = key[1];
         }
-        console.log('sendData:');
-        console.log(sendData);
         fetch(`${config.API_ENDPOINT}/api/users`, {
             method: 'POST',
             credentials: 'include',
@@ -37,11 +30,7 @@ export default class SignUp extends React.Component {
             .then((user) => {
                 console.log(user)
                 if (user && user.hasOwnProperty("id")) {
-                    console.log('user id' + user.id)
                     this.context.setUser({ id: user.id })
-                    console.log('did call this.context.setUser()');
-                    console.log('check user state:');
-                    console.log(this.context.user);
                     this.props.history.push('/login')
                 }
             })

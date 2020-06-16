@@ -79,6 +79,9 @@ button, a.button {
       display:inline-block;
       margin-bottom: 1rem;
   }
+  .logout {
+
+  }
 /*Login>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 .Login_container {
@@ -629,7 +632,7 @@ button, a.button {
         font-size:18px;
     }
     .Login_container, .SignUp_container {
-        max-width:40%;
+        max-width:50%;
     }
 
 }  

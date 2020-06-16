@@ -21,13 +21,6 @@ class App extends Component {
     user: {},
     currentList: []
   }
-  componentDidMount() {
-
-    // this.setState(STORE);
-    // console.log('App Ready');
-    // // output app state to view starting values
-    // console.log(this.state);
-  }
 
   renderMainRoutes() {
     return (
@@ -39,44 +32,26 @@ class App extends Component {
         <Route path="/add-list" component={AddList} />
         <Route path="/add-item" component={AddItem} />
         <Route path="/share-list" component={ShareList} />
-
-
       </>
     );
   }
 
   handleDeleteItem = (id) => {
-    console.log("handleDeleteItem", id);
-    // if(this.state.items){
-    //     console.log(this.state.items);
-    // }
     let newItems = this.state.items.filter(item => item.id !== id)
     this.setState({
       items: newItems
     });
-    console.log('this.state.items')
-    console.log(this.state.items)
   }
 
   handleDeleteList = (id) => {
-    console.log('handleDeleteList', id);
-    console.log(this.state.lists);
-    // this.state.items.filter((item) => {
-    //     console.log(item.listId + '!==' + id, item.listId !== id);
-    //     return item.listId !== id;
-    // });
     let newItems = this.state.items.filter((item) => item.listId !== id);
     let newLists = this.state.lists.filter((list) => list.id !== id);
-    console.log(newItems);
-    console.log(newLists);
     this.setState({
       items: newItems
     });
     this.setState({
       lists: newLists
     });
-    console.log(this.state.items);
-    console.log(this.state.lists);
   }
   render() {
     const value = {
@@ -89,42 +64,27 @@ class App extends Component {
       deleteList: this.handleDeleteList,
       addItem: (item) => {
         console.log(item);
-        // item.id = Math.floor(Math.random()*1E16).toString();
         this.state.items.push(item);
         this.setState(this.state);
       },
       addList: (list) => {
-        // list.id = Math.floor(Math.random()*1E16).toString();
         this.state.lists.push(list);
         this.setState(this.state);
       },
       setUser: (user) => {
         this.setState({ user: user });
-        console.log('did update user state')
       },
       setLists: (data) => {
         this.setState({ lists: data });
-        console.log('did update user lists')
-        console.log('this.state.lists: ')
-        console.log(this.state.lists)
       },
       setSharedLists: (data) => {
         this.setState({ sharedLists: data });
-        console.log('did update user shared lists')
-        console.log('this.state.sharedLists:')
-        console.log(this.state.sharedLists)
       },
       setItems: (data) => {
         this.setState({ items: data })
-        console.log('did update user items')
-        console.log('this.state.items: ')
-        console.log(this.state.items)
       },
       setCurrentList: (data) => {
         this.setState({ currentList: data })
-        console.log('did set current list')
-        console.log('this.state.currentList')
-        console.log(this.state.currentList)
       }
     };
 
@@ -135,7 +95,7 @@ class App extends Component {
             <h1>
               GroupCheck
             </h1>
-            <Route path="/" component={LogoutButton} />
+            <Route path="/" component={LogoutButton} className="logout" />
           </header>
           <ErrorBoundary errorMessage='could not display MainRoutes'>
             <main className="App__main">{this.renderMainRoutes()}

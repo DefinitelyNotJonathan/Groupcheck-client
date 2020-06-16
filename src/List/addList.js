@@ -39,7 +39,6 @@ class AddList extends React.Component {
             alert('please complete the required fields');
             return false;
         }
-        // fetch(`${config.API_ENDPOINT}/lists`, {
         fetch(`${config.API_ENDPOINT}/api/lists/`, {
             method: 'POST',
             credentials: 'include',
@@ -77,7 +76,6 @@ class AddList extends React.Component {
                  </Link>
 
                 <form onSubmit={this.handleSubmit} className="AddList_form">
-                    {/* <label htmlFor='nameInput' className="AddList_label">list name*</label> */}
                     <input id='nameInput' type="text" name="listName" placeholder="New List Name" className="AddList_input"></input>
                     <button type="submit" className="AddList_button">Create List</button>
                 </form>
