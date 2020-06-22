@@ -6,31 +6,31 @@
 <ul>
     <li>
         Login
-        <img src="./Images/ScreenshotLogin.jpg">
+        <img src="./src/Images/ScreenshotLogin.jpg">
     </li>
     <li>
         Signup
-        <img src="./Images/ScreenshotSignup.jpg">
+        <img src="./src/Images/ScreenshotSignup.jpg">
     </li>
     <li>
         Homepage
-        <img src="./Images/ScreenshotHomepage.jpg">
+        <img src="./src/Images/ScreenshotHomepage.jpg">
     </li>
     <li>
         List Main
-        <img src="./Images/ScreenshotListmain.jpg">
+        <img src="./src/Images/ScreenshotListmain.jpg">
     </li>
     <li>
         Add List
-        <img src="./Images/ScreenshotAddlist.jpg">
+        <img src="./src/Images/ScreenshotAddlist.jpg">
     </li>
     <li>
         Add Item
-        <img src="./Images/ScreenshotAdditem.jpg">
+        <img src="./src/Images/ScreenshotAdditem.jpg">
     </li>
     <li>
         Share List
-        <img src="./Images/ScreenshotSharelist.jpg">
+        <img src="./src/Images/ScreenshotSharelist.jpg">
     </li>
 </ul>
 <br>
