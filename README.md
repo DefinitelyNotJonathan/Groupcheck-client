@@ -6,30 +6,37 @@
 <ul>
     <li>
         Login
+        <br>
         <img src="./src/Images/ScreenshotLogin.jpg">
     </li>
     <li>
         Signup
+        <br>
         <img src="./src/Images/ScreenshotSignup.jpg">
     </li>
     <li>
         Homepage
+        <br>
         <img src="./src/Images/ScreenshotHomepage.jpg">
     </li>
     <li>
         List Main
+        <br>
         <img src="./src/Images/ScreenshotListmain.jpg">
     </li>
     <li>
         Add List
+        <br>
         <img src="./src/Images/ScreenshotAddlist.jpg">
     </li>
     <li>
         Add Item
+        <br>
         <img src="./src/Images/ScreenshotAdditem.jpg">
     </li>
     <li>
         Share List
+        <br>
         <img src="./src/Images/ScreenshotSharelist.jpg">
     </li>
 </ul>
