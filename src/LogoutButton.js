@@ -22,7 +22,7 @@ export default class LogoutButton extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="logout">
                 <button onClick={this.handleLogout}>Logout</button>
             </div>
         )

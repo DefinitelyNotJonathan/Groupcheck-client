@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import ListMain from './List/listMain';
 import ApiContext from './ApiContext';
 import AddList from './List/addList';
@@ -24,18 +24,22 @@ class App extends Component {
 
   renderMainRoutes() {
     return (
-      <>
-        <Route exact path="/" component={HomePage} />
+      <Switch>
         <Route path="/login" component={Login} />
-        <Route path="/signup" component={SignUp} />
-        <Route exact path="/lists/:listId" component={ListMain} />
-        <Route path="/add-list" component={AddList} />
-        <Route path="/add-item" component={AddItem} />
-        <Route path="/share-list" component={ShareList} />
-      </>
+        <Route path="/" >
+          <Route path="/" component={LogoutButton} className="logout" />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/signup" component={SignUp} />
+          <Route exact path="/lists/:listId" component={ListMain} />
+          <Route path="/add-list" component={AddList} />
+          <Route path="/add-item" component={AddItem} />
+          <Route path="/share-list" component={ShareList} />
+        </Route>
+      </Switch>
     );
   }
-
+//could put login at the top and put another route after login with path = / and move other routes into second route with all the other components
+//add a switch around login and / , put logout button in forward slash route
   handleDeleteItem = (id) => {
     let newItems = this.state.items.filter(item => item.id !== id)
     this.setState({
@@ -95,7 +99,6 @@ class App extends Component {
             <h1>
               GroupCheck
             </h1>
-            <Route path="/" component={LogoutButton} className="logout" />
           </header>
           <ErrorBoundary errorMessage='could not display MainRoutes'>
             <main className="App__main">{this.renderMainRoutes()}

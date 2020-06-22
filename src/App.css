@@ -80,7 +80,12 @@ button, a.button {
       margin-bottom: 1rem;
   }
   .logout {
-
+    display:flex;
+    max-width:80%;
+    flex-direction:row;
+    justify-content: flex-end;
+    margin:5rem auto;
+    margin-top:0;
   }
 /*Login>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
@@ -607,9 +612,9 @@ button, a.button {
     }
 }
 @media screen and (min-width:768px) {
-    .App__header {
+    /* .App__header {
         margin: 5rem 0;
-    }
+    } */
     .Login_container, .SignUp_container {
         max-width:60%;
     }
@@ -674,7 +679,7 @@ button, a.button {
     .ShareList_label {
         font-size:28px;
     }
-    .Homepage_Container, .AddList_container, .ShareList_container, .ListMain_itemlistcontainer {
+    .Homepage_Container, .AddList_container, .ShareList_container, .ListMain_itemlistcontainer, .logout {
         max-width:60%;
     }
 }
