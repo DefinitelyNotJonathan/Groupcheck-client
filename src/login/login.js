@@ -86,7 +86,7 @@ export default class Login extends React.Component {
                     <Link to="/signup" className="Login_signup">Create an account</Link>
                 </form>
                 <br/>
-                <p>
+                <p className="welcome">
                     Welcome to Groupcheck! Planning for a camping trip? Need to send off a to do list? Look no further than Groupcheck.
                     Simply sign up, sign in, and begin creating and sharing!
                 </p>
