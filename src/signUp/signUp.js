@@ -28,7 +28,6 @@ export default class SignUp extends React.Component {
         })
             .then(res => res.json())
             .then((user) => {
-                console.log(user)
                 if (user && user.hasOwnProperty("id")) {
                     this.context.setUser({ id: user.id })
                     this.props.history.push('/login')

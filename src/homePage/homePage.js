@@ -13,9 +13,6 @@ export default class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    console.log('homepage componentDidMount()');
-    console.log('the app user is: ' + this.context.user.firstname);
-
     //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
 
     fetch(`${config.API_ENDPOINT}/api/lists/`, {
@@ -31,7 +28,6 @@ export default class HomePage extends React.Component {
   }
 
   render() {
-    console.log('homepage and user is ' + this.context.user.firstname);
     if (this.state.toLogin === true) {
       return <Redirect to='/login' />
     }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import ApiContext from '../ApiContext'
 import config from '../config'
 
@@ -19,7 +19,6 @@ class List extends React.Component {
     handleClickDelete = () => {
         const listId = this.props.id
         const stringListId = String(listId)
-        console.log('listId', listId)
         fetch(`${config.API_ENDPOINT}/api/lists/` + stringListId, {
             method: 'DELETE',
             credentials: 'include',
@@ -30,7 +29,6 @@ class List extends React.Component {
             .then(res => {
                 if (!res.ok)
                     return res.json().then(e => Promise.reject(e))
-                console.log('delete worked!')
             })
             .then(() => {
                 this.context.deleteList(listId)
@@ -40,22 +38,17 @@ class List extends React.Component {
             })
     }
 
-    componentDidUpdate() {
-        console.log('component did update');
-    }
     render() {
         const id = this.props.id
-        console.log('LIST this.state.name')
-        console.log(this.state.listName)
         return (
             <li key={id} data-id={id} className='List'>
                 <Link
                     className='ListHomePage__List-link'
                     to={{
                         pathname: `/lists/${id}`,
-                        state: { 
+                        state: {
                             listName: this.props.name,
-                            listId: this.props.id   
+                            listId: this.props.id
                         }
                     }}
                 >

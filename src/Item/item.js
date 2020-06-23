@@ -14,8 +14,6 @@ class Item extends React.Component {
     let itemId = this.props.id
     let stringItemId = String(itemId)
     let stringListId = String(listId)
-    console.log('itemId', itemId)
-    console.log('listId', listId)
 
     fetch(`${config.API_ENDPOINT}/api/items/` + stringListId + '/' + stringItemId, {
       method: 'DELETE',
@@ -28,7 +26,6 @@ class Item extends React.Component {
       .then(res => {
         if (!res.ok)
           return res.json().then(e => Promise.reject(e))
-        console.log('delete worked!')
       })
       .then(() => {
         this.context.deleteItem(itemId)

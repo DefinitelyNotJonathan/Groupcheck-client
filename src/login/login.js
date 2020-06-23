@@ -28,7 +28,6 @@ export default class Login extends React.Component {
     }
 
     fetchUser(validUserId) {
-        console.log('fetchUser()', validUserId);
         return fetch(`${config.API_ENDPOINT}/api/users/` + validUserId, {
             method: 'GET',
             headers: { "Content-Type": "application/json" }
@@ -41,7 +40,6 @@ export default class Login extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const data = this.state;
-        console.log(data)
         fetch(`${config.API_ENDPOINT}/api/login`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },

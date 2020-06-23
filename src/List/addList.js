@@ -15,8 +15,6 @@ class AddList extends React.Component {
     }
     componentDidMount() {
         //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
-        console.log('ADD LIST state before the fetch')
-        console.log(this.state)
         fetch(`${config.API_ENDPOINT}/api/lists/`, {
             credentials: 'include'
         })
@@ -67,12 +65,12 @@ class AddList extends React.Component {
         return (
             <div className='AddList_container'>
                 <Link
-                        className='button back'
-                        to={{
-                            pathname: '/'
-                        }}
-                    >
-                        Back
+                    className='button back'
+                    to={{
+                        pathname: '/'
+                    }}
+                >
+                    Back
                  </Link>
 
                 <form onSubmit={this.handleSubmit} className="AddList_form">

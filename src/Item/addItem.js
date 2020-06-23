@@ -55,9 +55,6 @@ class AddItem extends React.Component {
             content: e.target.itemContent.value
         }
         const stringId = String(data.list_id)
-        console.log('handlesubmit, context below')
-        console.log(this.context)
-        console.log(data)
         if (data.name === '') {
             alert('please complete the required fields');
             return false;
@@ -76,12 +73,7 @@ class AddItem extends React.Component {
         })
             .then(res => res.json())
             .then((item) => {
-                console.log('response item')
-                console.log(item)
                 this.context.addItem(item)
-                console.log('did call this.context.setUser()');
-                console.log('check user state:');
-                console.log(this.context.items);
                 this.props.history.goBack();
             })
     }
