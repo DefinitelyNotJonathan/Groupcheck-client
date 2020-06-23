@@ -55,7 +55,7 @@ export default class ShareList extends React.Component {
                 }
             })
             .then(list => {
-                alert(`${list} was successfully shared!`)
+                alert(`List was successfully shared!`)
                 this.props.history.push('/');
             })
             .catch(error => {
