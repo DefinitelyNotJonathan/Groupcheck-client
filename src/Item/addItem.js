@@ -3,21 +3,6 @@ import { Redirect, Link } from 'react-router-dom'
 import ApiContext from '../ApiContext'
 import config from '../config'
 
-
-// class ListItem {
-//     constructor(
-//         key,
-//         id,
-//         name,
-//         content,
-//         priority, 
-//         list_id,
-//         user_id,    
-//     ){}
-
-//   }
-
-
 class AddItem extends React.Component {
 
     static contextType = ApiContext;

@@ -78,7 +78,14 @@ class ListMain extends React.Component {
     )
   }
 }
-
+ListMain.defaultProps={
+  location:{
+    state:{}
+  },
+  match:{
+    params:{}
+  }
+}
 ListMain.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.object

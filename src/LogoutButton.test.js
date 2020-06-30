@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.js';
-import {BrowserRouter} from 'react-router-dom';
+import LogoutButton from './LogoutButton.js';
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, div);
+    ReactDOM.render(<LogoutButton />, div);
     ReactDOM.unmountComponentAtNode(div);
   });

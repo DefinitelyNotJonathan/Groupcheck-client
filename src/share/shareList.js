@@ -116,3 +116,8 @@ export default class ShareList extends React.Component {
     }
 }
 
+ShareList.defaultProps={
+    location:{
+        state:{}
+    }
+}
