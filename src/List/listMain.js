@@ -1,10 +1,10 @@
-import React from 'react'
-import { Redirect, Link } from 'react-router-dom'
-import Item from '../Item/item'
-import ApiContext from '../ApiContext'
-import PropTypes from 'prop-types'
-import ListMainNav from './listMainNav'
-import config from '../config'
+import React from 'react';
+import { Redirect, Link } from 'react-router-dom';
+import Item from '../Item/item';
+import ApiContext from '../ApiContext';
+import PropTypes from 'prop-types';
+import ListMainNav from './listMainNav';
+import config from '../config';
 
 class ListMain extends React.Component {
 
@@ -41,7 +41,7 @@ class ListMain extends React.Component {
     })
       .then(res => res.json())
       .then(data => {
-        this.context.setItems(data)
+        this.context.setItems(data);
       })
   }
 

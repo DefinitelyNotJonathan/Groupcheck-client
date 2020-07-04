@@ -1,5 +1,5 @@
 import React from 'react';
-import ApiContext from '../ApiContext'
+import ApiContext from '../ApiContext';
 import { Link } from 'react-router-dom';
 
 export default class ListMainNav extends React.Component {
@@ -15,7 +15,7 @@ export default class ListMainNav extends React.Component {
     componentDidMount() {
         this.setState({
             listId: this.context.currentList
-        })
+        });
     }
     render() {
         return (

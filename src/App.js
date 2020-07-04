@@ -38,8 +38,7 @@ class App extends Component {
       </Switch>
     );
   }
-  //could put login at the top and put another route after login with path = / and move other routes into second route with all the other components
-  //add a switch around login and / , put logout button in forward slash route
+
   handleDeleteItem = (id) => {
     let newItems = this.state.items.filter(item => item.id !== id)
     this.setState({

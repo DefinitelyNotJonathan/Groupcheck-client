@@ -2,6 +2,13 @@
 <p> Enables users to create itemized lists, and share lists to other users for task/supply communication</p>
 <h2>Live Link:</h2>
 <p>https://groupcheck.jonretchless.vercel.app</p>
+<h2>Demo Credentials:</h2>
+<ul>
+    <li>Email: test@test.test</li>
+    <li>Password: test</li>
+    <li>Email: test2@test.test</li>
+    <li>Password: test</li>
+</ul>
 <h2>Screenshots:</h2>
 <ul>
     <li>

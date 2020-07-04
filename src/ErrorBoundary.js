@@ -1,13 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class ErrorBoundary extends React.Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      hasError: false
-    }
+      hasError: false,
+    };
   }
 
   static getDerivedStateFromError() {
@@ -25,7 +25,7 @@ class ErrorBoundary extends React.Component {
 }
 
 ErrorBoundary.propTypes = {
-  errorMessage: PropTypes.string.isRequired
+  errorMessage: PropTypes.string.isRequired,
 };
 
 export default ErrorBoundary;

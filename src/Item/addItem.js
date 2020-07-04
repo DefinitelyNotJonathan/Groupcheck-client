@@ -1,7 +1,7 @@
-import React from 'react'
-import { Redirect, Link } from 'react-router-dom'
-import ApiContext from '../ApiContext'
-import config from '../config'
+import React from 'react';
+import { Redirect, Link } from 'react-router-dom';
+import ApiContext from '../ApiContext';
+import config from '../config';
 
 class AddItem extends React.Component {
 
@@ -12,7 +12,7 @@ class AddItem extends React.Component {
         this.state = {
             toLogin: false
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -58,7 +58,7 @@ class AddItem extends React.Component {
         })
             .then(res => res.json())
             .then((item) => {
-                this.context.addItem(item)
+                this.context.addItem(item);
                 this.props.history.goBack();
             })
     }

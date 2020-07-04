@@ -1,7 +1,7 @@
-import React from 'react'
-import { Redirect, Link } from 'react-router-dom'
-import ApiContext from '../ApiContext.js'
-import config from '../config'
+import React from 'react';
+import { Redirect, Link } from 'react-router-dom';
+import ApiContext from '../ApiContext.js';
+import config from '../config';
 
 class AddList extends React.Component {
     static contextType = ApiContext;
@@ -22,7 +22,7 @@ class AddList extends React.Component {
                 if (data.status === 403) {
                     this.setState({
                         toLogin: true
-                    })
+                    });
                 }
             })
     }

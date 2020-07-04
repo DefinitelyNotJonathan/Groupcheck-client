@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import List from './list'
-import ApiContext from '../ApiContext'
-import config from '../config'
+import React from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import List from './list';
+import ApiContext from '../ApiContext';
+import config from '../config';
 
 export default class ListHomePage extends React.Component {
 
@@ -29,9 +29,9 @@ export default class ListHomePage extends React.Component {
     })
       .then(res => res.json())
       .then(data => {
-        this.context.setLists(data)
+        this.context.setLists(data);
       })
-      .catch(console.log)
+      .catch(console.log);
 
     fetch(`${config.API_ENDPOINT}/api/lists/shared`, {
       method: 'GET',
@@ -39,9 +39,9 @@ export default class ListHomePage extends React.Component {
     })
       .then(res => res.json())
       .then(data => {
-        this.context.setSharedLists(data)
+        this.context.setSharedLists(data);
       })
-      .catch(console.log)
+      .catch(console.log);
   }
   render() {
     if (this.state.toLogin === true) {

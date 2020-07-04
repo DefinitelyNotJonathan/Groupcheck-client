@@ -1,7 +1,7 @@
-import React from 'react'
-import ApiContext from '../ApiContext'
-import PropTypes from 'prop-types'
-import config from '../config'
+import React from 'react';
+import ApiContext from '../ApiContext';
+import PropTypes from 'prop-types';
+import config from '../config';
 
 
 class Item extends React.Component {
@@ -25,13 +25,13 @@ class Item extends React.Component {
     })
       .then(res => {
         if (!res.ok)
-          return res.json().then(e => Promise.reject(e))
+          return res.json().then(e => Promise.reject(e));
       })
       .then(() => {
-        this.context.deleteItem(itemId)
+        this.context.deleteItem(itemId);
       })
       .catch(error => {
-        console.error({ error })
+        console.error({ error });
       })
   }
   render() {

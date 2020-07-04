@@ -1,9 +1,9 @@
 import React from 'react';
 import Dashboard from '../dashboard/dashboard';
 import ListHomePage from '../List/listHomePage';
-import ApiContext from '../ApiContext'
-import { Redirect } from 'react-router-dom'
-import config from '../config'
+import ApiContext from '../ApiContext';
+import { Redirect } from 'react-router-dom';
+import config from '../config';
 
 export default class HomePage extends React.Component {
 

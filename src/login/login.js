@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import ApiContext from '../ApiContext'
-import config from '../config'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ApiContext from '../ApiContext';
+import config from '../config';
 
 export default class Login extends React.Component {
 
@@ -20,11 +20,11 @@ export default class Login extends React.Component {
     }
 
     handlePassword(e) {
-        this.setState({ p_word: e.target.value })
+        this.setState({ p_word: e.target.value });
     }
 
     handleEmail(e) {
-        this.setState({ email: e.target.value })
+        this.setState({ email: e.target.value });
     }
 
     fetchUser(validUserId) {
@@ -71,6 +71,11 @@ export default class Login extends React.Component {
     render() {
         return (
             <div className="Login_container">
+                <h2>Demo Credentials</h2>
+                <p>Email: test@test.test</p>
+                <p>Password: test</p>
+                <p>Email: test2@test.test</p>
+                <p>Password: test</p>
                 <form action=""
                     onSubmit={(e) => this.handleSubmit(e)}
                     className="Login_form"

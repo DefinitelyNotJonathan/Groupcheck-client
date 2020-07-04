@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default React.createContext({
   items: [],
@@ -15,4 +15,4 @@ export default React.createContext({
   setSharedLists: () => { },
   setItems: () => { },
   setCurrentList: () => { },
-})
+});

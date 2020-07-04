@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import ApiContext from '../ApiContext'
-import config from '../config'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ApiContext from '../ApiContext';
+import config from '../config';
 
 class List extends React.Component {
     static contextType = ApiContext;
@@ -11,10 +11,10 @@ class List extends React.Component {
             listName: this.props.name,
             listId: this.props.id
         }
-        this.handleAddContext = this.handleAddContext.bind(this)
+        this.handleAddContext = this.handleAddContext.bind(this);
     }
     handleAddContext = (id) => {
-        this.context.setCurrentList(id)
+        this.context.setCurrentList(id);
     }
     handleClickDelete = () => {
         const listId = this.props.id
@@ -28,13 +28,13 @@ class List extends React.Component {
         })
             .then(res => {
                 if (!res.ok)
-                    return res.json().then(e => Promise.reject(e))
+                    return res.json().then(e => Promise.reject(e));
             })
             .then(() => {
-                this.context.deleteList(listId)
+                this.context.deleteList(listId);
             })
             .catch(error => {
-                console.error({ error })
+                console.error({ error });
             })
     }
 
