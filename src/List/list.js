@@ -33,9 +33,6 @@ class List extends React.Component {
             .then(() => {
                 this.context.deleteList(listId);
             })
-            .catch(error => {
-                console.error({ error });
-            })
     }
 
     render() {

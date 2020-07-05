@@ -46,16 +46,12 @@ export default class ShareList extends React.Component {
                 if (res.ok) {
                     return res.json();
                 }
-                console.log('didnt work');
                 return res.json().then((e) => Promise.reject(e));
             })
             .then(() => {
                 alert('List was successfully shared!');
                 this.props.history.push('/');
             })
-            .catch((error) => {
-                console.error({ error });
-            });
     }
 
     handleSubmit(e) {
@@ -64,15 +60,18 @@ export default class ShareList extends React.Component {
         fetch(`${config.API_ENDPOINT}/api/share/${this.email}`, {
             credentials: 'include',
         })
-            .then((res) => res.json())
+            .then((res) => {
+                if (res.status === 404) {
+                    alert('Oops, it appears there is no user linked to this email address.');
+                }
+                return res.json();
+            })
             .then((data) => {
                 this.setState({
                     shareId: data.id,
                 });
                 if (data) {
                     this.executeTheShare(this.state.shareId, this.state.listId);
-                } else {
-                    throw new Error('Something went wrong');
                 }
             });
     }
@@ -111,7 +110,6 @@ export default class ShareList extends React.Component {
                 </form>
             </div>
         );
-
     }
 }
 

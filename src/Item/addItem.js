@@ -97,10 +97,6 @@ class AddItem extends React.Component {
                     <button className="AddItem_button">Create Note</button>
                 </form>
             </div>
-
-
-
-
         )
     }
 }

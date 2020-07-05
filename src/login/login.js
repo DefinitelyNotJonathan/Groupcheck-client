@@ -63,10 +63,6 @@ export default class Login extends React.Component {
                     // some problem with the data load!
                 }
             })
-            .catch((error) => {
-                console.log('an error happened');
-                console.log(error);
-            })
     }
     render() {
         return (

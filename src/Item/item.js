@@ -30,9 +30,6 @@ class Item extends React.Component {
       .then(() => {
         this.context.deleteItem(itemId);
       })
-      .catch(error => {
-        console.error({ error });
-      })
   }
   render() {
     const { name, content, priority } = this.props
@@ -72,5 +69,9 @@ Item.propTypes = {
   name: PropTypes.string.isRequired
 };
 
+Item.defaultProps={
+  id:1,
+  name:""
+}
 
 export default Item;

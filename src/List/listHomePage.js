@@ -31,7 +31,6 @@ export default class ListHomePage extends React.Component {
       .then(data => {
         this.context.setLists(data);
       })
-      .catch(console.log);
 
     fetch(`${config.API_ENDPOINT}/api/lists/shared`, {
       method: 'GET',
@@ -41,7 +40,6 @@ export default class ListHomePage extends React.Component {
       .then(data => {
         this.context.setSharedLists(data);
       })
-      .catch(console.log);
   }
   render() {
     if (this.state.toLogin === true) {

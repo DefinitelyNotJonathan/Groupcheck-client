@@ -46,16 +46,14 @@ class AddList extends React.Component {
             body: JSON.stringify(data),
         })
             .then(res => {
-                if (!res.ok)
+                if (!res.ok){
                     return res.json().then(e => Promise.reject(e))
+                }
                 return res.json()
             })
             .then(list => {
                 this.context.addList(list)
                 this.props.history.push('/');
-            })
-            .catch(error => {
-                console.error({ error })
             })
     }
     render() {
