@@ -18,12 +18,14 @@ class List extends React.Component {
     }
     handleClickDelete = () => {
         const listId = this.props.id
+        const author = this.props.author
         const stringListId = String(listId)
         fetch(`${config.API_ENDPOINT}/api/lists/` + stringListId, {
             method: 'DELETE',
             credentials: 'include',
             body: JSON.stringify({
-                list_id: listId
+                list_id: listId,
+                author: author
             })
         })
             .then(res => {

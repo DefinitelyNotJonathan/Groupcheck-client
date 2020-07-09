@@ -75,6 +75,7 @@ export default class ListHomePage extends React.Component {
                 key={list.id}
                 id={list.id}
                 name={list.name}
+                author={list.author}
               />
             ))
           }
