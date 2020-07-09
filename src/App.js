@@ -49,11 +49,15 @@ class App extends Component {
   handleDeleteList = (id) => {
     let newItems = this.state.items.filter((item) => item.listId !== id);
     let newLists = this.state.lists.filter((list) => list.id !== id);
+    let newSharedLists = this.state.sharedLists.filter((sharedList) => sharedList.id !== id)
     this.setState({
       items: newItems
     });
     this.setState({
       lists: newLists
+    });
+    this.setState({
+      sharedLists: newSharedLists
     });
   }
   render() {

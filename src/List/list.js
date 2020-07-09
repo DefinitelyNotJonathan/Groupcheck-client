@@ -26,7 +26,8 @@ class List extends React.Component {
             body: JSON.stringify({
                 list_id: listId,
                 author: author
-            })
+            }),
+            type: "json",
         })
             .then(res => {
                 if (!res.ok)
