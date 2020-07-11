@@ -31,6 +31,8 @@ export default class SignUp extends React.Component {
                 if (user && user.hasOwnProperty("id")) {
                     this.context.setUser({ id: user.id })
                     this.props.history.push('/login')
+                } else {
+                    alert('This email address is already being used by another account')
                 }
             })
     }
