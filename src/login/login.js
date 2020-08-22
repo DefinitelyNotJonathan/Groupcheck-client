@@ -47,7 +47,7 @@ export default class Login extends React.Component {
             headers: { "Content-Type": "application/json" },
             credentials: 'include',
             body: JSON.stringify(data),
-            mode: 'cors'
+            // mode: 'cors'
         })
         .then(res => res.json())
         .then((data) => {
