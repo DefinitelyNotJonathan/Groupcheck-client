@@ -15,6 +15,7 @@ export default class ListHomePage extends React.Component {
 
     //IF STATEMENT FOR CHECKING IF SESSION IS PRESENT
     fetch(`${config.API_ENDPOINT}/api/lists/`, {
+      headers: { "Content-Type": "application/json" },
       credentials: 'include'
     })
       .then(data => {
@@ -25,21 +26,30 @@ export default class ListHomePage extends React.Component {
         }
       })
     fetch(`${config.API_ENDPOINT}/api/lists/`, {
+      headers: { "Content-Type": "application/json" },
       credentials: 'include'
     })
       .then(res => res.json())
       .then(data => {
         this.context.setLists(data);
       })
+      .catch((err) => {
+        console.log(err)
+      })
 
     fetch(`${config.API_ENDPOINT}/api/lists/shared`, {
       method: 'GET',
+      headers: { "Content-Type": "application/json" },
       credentials: 'include'
     })
       .then(res => res.json())
       .then(data => {
         this.context.setSharedLists(data);
       })
+      .catch((err) => {
+        console.log(err)
+      })
+
   }
   render() {
     if (this.state.toLogin === true) {

@@ -10,8 +10,8 @@ export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
-            p_word: ''
+            email: 'test@test.test',
+            p_word: 'test'
         };
 
         this.handlePassword = this.handlePassword.bind(this);
@@ -38,31 +38,40 @@ export default class Login extends React.Component {
 
     }
     handleSubmit(e) {
+        console.log('handleSubmit()');
         e.preventDefault();
         const data = this.state;
+        console.log(data);
         fetch(`${config.API_ENDPOINT}/api/login`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             credentials: 'include',
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            mode: 'cors'
         })
-            .then(res => res.json())
-            .then((data) => {
-                if (data && data.hasOwnProperty("id")) {
-                    return data.id
-                } else {
-                    throw new Error('Something went wrong');
-                }
-            })
-            .then((user_id) => this.fetchUser(user_id))
-            .then((user) => {
-                if (user && user.hasOwnProperty('id')) {
-                    this.context.setUser(user)
-                    this.props.history.push('/')
-                } else {
-                    // some problem with the data load!
-                }
-            })
+        .then(res => res.json())
+        .then((data) => {
+            console.log('handleSubmit return fetch')
+            console.log(data)
+            if (data && data.hasOwnProperty("id")) {
+                return data.id
+            } else {
+                throw new Error('Something went wrong');
+            }
+        })
+        .then((user_id) => this.fetchUser(user_id))
+        .then((user) => {
+
+            console.log('the server knows us as:');
+            console.log(user);
+
+            if (user && user.hasOwnProperty('id')) {
+                this.context.setUser(user)
+                this.props.history.push('/')
+            } else {
+                // some problem with the data load!
+            }
+        })
     }
     render() {
         return (
@@ -77,9 +86,9 @@ export default class Login extends React.Component {
                     className="Login_form"
                 >
                     <label htmlFor="email" className="Login_label">Email</label>
-                    <input type="text" id="email" name="email" value={this.state.email} onChange={(e) => this.handleEmail(e)} className="Login_input" required></input>
+                    <input type="text" id="email" name="email" value="test@test.test" onChange={(e) => this.handleEmail(e)} className="Login_input" required></input>
                     <label htmlFor="password" className="Login_label">Password</label>
-                    <input type="password" id="password" name="password" value={this.state.p_word} onChange={(e) => this.handlePassword(e)} className="Login_input" required ></input>
+                    <input type="password" id="password" name="password" value="test" onChange={(e) => this.handlePassword(e)} className="Login_input" required ></input>
 
                     <div className="Login_buttoncontainer">
                         <button type="submit" className="Login_button" >Sign In</button>
