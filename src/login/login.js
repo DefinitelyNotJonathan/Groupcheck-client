@@ -10,8 +10,8 @@ export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: 'test@test.test',
-            p_word: 'test'
+            email: '',
+            p_word: ''
         };
 
         this.handlePassword = this.handlePassword.bind(this);
@@ -30,13 +30,18 @@ export default class Login extends React.Component {
     fetchUser(validUserId) {
         return fetch(`${config.API_ENDPOINT}/api/users/` + validUserId, {
             method: 'GET',
-            headers: { "Content-Type": "application/json" }
+            headers: { "Content-Type": "application/json" },
+            credentials: 'same-origin' // <  -- changed this from 'include'
         })
-            .catch((error) => {
-            })
-            .then(res => res.json())
-
+        .catch((error) => {
+            console.log('some error happened fetchUser()');
+            if(error){
+                console.log(error);
+            }
+        })
+        .then(res => res.json())
     }
+
     handleSubmit(e) {
         console.log('handleSubmit()');
         e.preventDefault();
